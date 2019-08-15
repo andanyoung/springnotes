@@ -143,7 +143,8 @@ public class InstanceFactory {
 
 //bean.xml
 <bean id="instancFactory" class="cn.andyoung.factory.InstanceFactory"></bean>
-    <bean id="accountServiceInstancFactory" factory-bean="instancFactory" factory-method="getAccountService"></bean>
+<bean id="accountServiceInstancFactory" factory-bean="instancFactory" factory-method="getAccountService">
+</bean>
 ```
 
 ### spring 的依赖注入
@@ -186,7 +187,7 @@ public class AccountServiceImpl implements IAccountService {
 >    属性：
 > index:指定参数在构造函数参数列表的索引位置
 > type:指定参数在构造函数中的数据类型
-> name:指定参数在构造函数中的名称 用这个找给谁赋值
+> name:指定参数在构造函数中的名称 用这个找给谁赋值   
 =======上面三个都是找给谁赋值，下面两个指的是赋什么值的==============
 value:它能赋的值是基本数据类型和 String 类型
 ref:它能赋的值是其他 bean 类型，也就是说，必须得是在配置文件中配置过的 bean

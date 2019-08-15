@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd"
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"
        xmlns:p="http://www.springframework.org/schema/p">
 
     <!--把对象的创建交给spring来管理-->
@@ -13,7 +16,7 @@
     <!-- 此种方式是:使用 StaticFactory 类中的静态方法 createAccountService 创建对象，并存入 spring 容器id 属性：指定 bean 的 id，用于从容器中获取class 属性：指定静态工厂的全限定类名factory-method 属性：指定生产对象的静态方法-->
     <bean id="accountServiceStaticFactory"
           class="cn.andyoung.factory.StaticFactory"
-           factory-method="getAccountService"></bean>
+          factory-method="getAccountService"></bean>
 
     <!-- 此种方式是：
 先把工厂的创建交给 spring 来管理。
@@ -44,14 +47,14 @@ factory-method 属性：用于指定实例工厂中创建对象的方法。
 
     <!-- 注入集合属性 -->
     <bean id="accountDaoCC" class="cn.andyoung.dao.impl.AccountDaoImpl">
-<!-- 在注入集合数据时，只要结构相同，标签可以互换 --><!-- 给数组注入数据 -->
-    <property name="myStrs">
-        <set>
-            <value>AAA</value>
-            <value>BBB</value>
-            <value>CCC</value>
-        </set>
-    </property>
+        <!-- 在注入集合数据时，只要结构相同，标签可以互换 --><!-- 给数组注入数据 -->
+        <property name="myStrs">
+            <set>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </set>
+        </property>
         <!-- 注入 list 集合数据 -->
         <property name="myList">
             <array>
@@ -62,10 +65,12 @@ factory-method 属性：用于指定实例工厂中创建对象的方法。
         </property>
         <!-- 注入 set 集合数据 -->
         <property name="mySet">
-            <list><value>AAA</value>
+            <list>
+                <value>AAA</value>
                 <value>BBB</value>
                 <value>CCC</value>
-            </list></property>
+            </list>
+        </property>
         <!-- 注入 Map 数据 -->
         <property name="myMap">
             <props>
@@ -74,4 +79,7 @@ factory-method 属性：用于指定实例工厂中创建对象的方法。
             </props>
         </property>
     </bean>
+
+    <!-- 告知 spring 创建容器时要扫描的包 -->
+    <context:component-scan base-package="cn.andyoung"></context:component-scan>
 </beans>
