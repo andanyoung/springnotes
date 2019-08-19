@@ -208,4 +208,273 @@ spring 采用动态代理织入，而 AspectJ 采用编译期织入和类装载�
 - Aspect(切面):
 是切入点和通知（引介）的结合。
 ### 学习 spring 中的 AOP 要明确的事
-     
+- a、开发阶段（我们做的）
+编写核心业务代码（开发主线）：大部分程序员来做，要求熟悉业务需求。
+把公用代码抽取出来，制作成通知。（开发阶段最后再做）：AOP 编程人员来做。
+在配置文件中，声明切入点与通知间的关系，即切面。：AOP 编程人员来做。
+- b、运行阶段（Spring 框架完成的）
+Spring 框架监控切入点方法的执行。一旦监控到切入点方法被运行，使用代理机制，动态创建目标对
+象的代理对象，根据通知类别，在代理对象的对应位置，将通知对应的功能织入，完成完整的代码逻辑运行。
+## 基于 XML 的 AOP 配置
+- bean.xml
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 配置srping的Ioc,把service对象配置进来-->
+    <bean id="accountService" class="cn.andyoung.service.impl.AccountServiceImpl"></bean>
+
+    <!--spring中基于XML的AOP配置步骤
+        1、把通知Bean也交给spring来管理
+        2、使用aop:config标签表明开始AOP的配置
+        3、使用aop:aspect标签表明配置切面
+                id属性：是给切面提供一个唯一标识
+                ref属性：是指定通知类bean的Id。
+        4、在aop:aspect标签的内部使用对应标签来配置通知的类型
+               我们现在示例是让printLog方法在切入点方法执行之前之前：所以是前置通知
+               aop:before：表示配置前置通知
+                    method属性：用于指定Logger类中哪个方法是前置通知
+                    pointcut属性：用于指定切入点表达式，该表达式的含义指的是对业务层中哪些方法增强
+
+            切入点表达式的写法：
+                关键字：execution(表达式)
+                表达式：
+                    访问修饰符  返回值  包名.包名.包名...类名.方法名(参数列表)
+                标准的表达式写法：
+                    public void com.itheima.service.impl.AccountServiceImpl.saveAccount()
+                访问修饰符可以省略
+                    void com.itheima.service.impl.AccountServiceImpl.saveAccount()
+                返回值可以使用通配符，表示任意返回值
+                    * com.itheima.service.impl.AccountServiceImpl.saveAccount()
+                包名可以使用通配符，表示任意包。但是有几级包，就需要写几个*.
+                    * *.*.*.*.AccountServiceImpl.saveAccount())
+                包名可以使用..表示当前包及其子包
+                    * *..AccountServiceImpl.saveAccount()
+                类名和方法名都可以使用*来实现通配
+                    * *..*.*()
+                参数列表：
+                    可以直接写数据类型：
+                        基本类型直接写名称           int
+                        引用类型写包名.类名的方式   java.lang.String
+                    可以使用通配符表示任意类型，但是必须有参数
+                    可以使用..表示有无参数均可，有参数可以是任意类型
+                全通配写法：
+                    * *..*.*(..)
+
+                实际开发中切入点表达式的通常写法：
+                    切到业务层实现类下的所有方法
+                        * com.itheima.service.impl.*.*(..)
+    -->
+
+    <!-- 配置Logger类 -->
+    <bean id="logger" class="cn.andyoung.utils.Logger"></bean>
+
+    <!--配置AOP-->
+    <aop:config>
+        <!--配置切面 -->
+        <!--用于配置切入点表达式。就是指定对哪些类的哪些方法进行增强。-->
+        <aop:pointcut id="pt" expression="execution(* cn.andyoung.service.impl.*.*(..))"></aop:pointcut>
+        <aop:aspect id="logAdvice" ref="logger">
+            <!-- 配置通知的类型，并且建立通知方法和切入点方法的关联-->
+            <aop:before method="printLogBefore" pointcut="execution(* cn.andyoung.service.impl.*.*(..))"></aop:before>
+            <aop:after method="printLogAfter" pointcut-ref="pt"></aop:after>
+            <!-- 配置环绕通知 -->
+            <aop:around method="printLogAround" pointcut-ref="pt"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
+```
+### 配置步骤
+#### 第一步：把通知类用 bean 标签配置起来
+```
+ <!-- 配置Logger类 -->
+    <bean id="logger" class="cn.andyoung.utils.Logger"></bean>
+```
+#### 第二步：使用 aop:config 声明 aop 配置
+- aop:config:
+ 作用：用于声明开始 aop 的配置
+```
+<aop:config>
+    <!-- 配置的代码都写在此处 -->
+</aop:config>
+```
+#### 第三步：使用 aop:aspect 配置切面
+- aop:aspect:
+  - 作用：
+用于配置切面。
+  - 属性：
+id：给切面提供一个唯一标识。
+ref：引用配置好的通知类 bean 的 id。 
+```
+<aop:aspect id="txAdvice" ref="txManager">
+<!--配置通知的类型要写在此处-->
+</aop:aspect>
+```
+#### 第四步：使用 aop:pointcut 配置切入点表达式
+- aop:pointcut：
+  - 作用：
+用于配置切入点表达式。就是指定对哪些类的哪些方法进行增强。
+  - 属性：
+expression：用于定义切入点表达式。
+id：用于给切入点表达式提供一个唯一标识
+```
+<!--用于配置切入点表达式。就是指定对哪些类的哪些方法进行增强。-->
+<aop:pointcut id="pt" expression="execution(* cn.andyoung.service.impl.*.*(..))"></aop:pointcut>
+```
+#### 第五步：使用 aop:xxx 配置对应的通知类型
+- aop:before
+  - 作用：
+用于配置前置通知。指定增强的方法在切入点方法之前执行
+  - 属性：
+method:用于指定通知类中的增强方法名称
+ponitcut-ref：用于指定切入点的表达式的引用
+poinitcut：用于指定切入点表达式
+- 执行时间点：
+切入点方法执行之前执行
+```
+<aop:aspect id="logAdvice" ref="logger">
+  <!-- 配置通知的类型，并且建立通知方法和切入点方法的关联-->
+  <aop:before method="printLog" pointcut="execution(* cn.andyoung.service.impl.*.*(..))"></aop:before>
+</aop:aspect>
+```
+- aop:after-returning
+  - 作用：
+用于配置后置通知
+  - 属性：
+method：指定通知中方法的名称。
+pointct：定义切入点表达式
+pointcut-ref：指定切入点表达式的引用
+- 执行时间点：
+切入点方法正常执行之后。它和异常通知只能有一个执行
+```
+<aop:after method="printLog" pointcut-ref="pt"></aop:after>
+```
+- aop:after-throwing
+  - 作用：
+用于配置异常通知
+  - 属性：
+method：指定通知中方法的名称。
+pointct：定义切入点表达式
+pointcut-ref：指定切入点表达式的引用
+- 执行时间点：
+切入点方法执行产生异常后执行。它和后置通知只能执行一个
+```
+<aop:after-throwing method="rollback" pointcut-ref="pt1"/>
+```
+- aop:after
+  - 作用：
+用于配置最终通知
+  - 属性：
+method：指定通知中方法的名称。
+pointct：定义切入点表达式
+pointcut-ref：指定切入点表达式的引用
+- 执行时间点：
+无论切入点方法执行时是否有异常，它都会在其后面执行。
+```<aop:after method="release" pointcut-ref="pt1"/>```
+### 2.2.3 切入点表达式说明
+- execution:匹配方法的执行(常用)
+  - execution(表达式)
+表达式语法：execution([修饰符] 返回值类型 包名.类名.方法名(参数))
+写法说明：
+全匹配方式：
+```
+public void 
+cn.andyoung.service.impl.AccountServiceImpl.saveAccount(cn.andyoung.domain.Account)
+```
+访问修饰符可以省略
+```
+void 
+cn.andyoung.service.impl.AccountServiceImpl.saveAccount(cn.andyoung.domain.Account)
+```
+返回值可以使用*号，表示任意返回值
+```
+* cn.andyoung.service.impl.AccountServiceImpl.saveAccount(cn.andyoung.domain.Account)
+```
+包名可以使用*号，表示任意包，但是有几级包，需要写几个*
+```
+* *.*.*.*.AccountServiceImpl.saveAccount(cn.andyoung.domain.Account)
+```
+使用..来表示当前包，及其子包
+```
+* cn.andyoung.service.AccountServiceImpl.saveAccount(cn.andyoung.domain.Account)
+```
+类名可以使用*号，表示任意类
+```
+* cn..*.saveAccount(cn.andyoung.domain.Account)
+```
+方法名可以使用*号，表示任意方法
+```
+* cn..*.*( cn.andyoung.domain.Account)
+```
+参数列表可以使用*，表示参数可以是任意数据类型，但是必须有参数
+```
+* cn..*.*(*)
+```
+参数列表可以使用..表示有无参数均可，有参数可以是任意类型
+```
+* cn..*.*(..)
+```
+全通配方式：
+```
+* *..*.*(..)
+```
+- 注：
+通常情况下，我们都是对业务层的方法进行增强，所以切入点表达式都是切到业务层实现类。
+```execution(* cn.andyoung.service.impl.*.*(..))```
+### 环绕通知
+- 最后一种通知是环绕通知。环绕通知在一个方法执行之前和之后执行。它使得通知有机会 在一个方法执行之前和执行之后运行。而且它可以决定这个方法在什么时候执行，如何执行，甚至是否执行。 环绕通知经常在某线程安全的环境下，你需要在一个方法执行之前和之后共享某种状态的时候使用。 请尽量使用最简单的满足你需求的通知。（比如如果简单的前置通知也可以适用的情况下不要使用环绕通知）。
+```
+<!-- 配置环绕通知 -->
+<aop:around method="printLogAround" pointcut-ref="pt"/>
+```
+- aop:around：
+  - 作用：
+用于配置环绕通知
+  - 属性：
+method：指定通知中方法的名称。
+pointct：定义切入点表达式
+pointcut-ref：指定切入点表达式的引用
+- 说明：
+它是 spring 框架为我们提供的一种可以在代码中手动控制增强代码什么时候执行的方式。
+- 注意：
+通常情况下，环绕通知都是独立使用的
+- java
+```
+/**
+   * 环绕通知
+   *
+   * @param pjp spring 框架为我们提供了一个接口：ProceedingJoinPoint，它可以作为环绕通知的方法参数。 在环绕通知执行时，spring
+   *     框架会为我们提供该接口的实现类对象，我们直接使用就行。
+   * @return
+   */
+  public Object printLogAround(ProceedingJoinPoint pjp) {
+    System.out.println("printLogAround。。。");
+    // 定义返回值
+    Object rtValue = null;
+    try {
+      // 获取方法执行所需的参数
+      Object[] args = pjp.getArgs();
+      // 前置通知：开启事务
+      // beginTransaction();
+      // 执行方法
+      rtValue = pjp.proceed(args);
+      // 后置通知：提交事务
+      //  commit();
+    } catch (Throwable e) {
+      // 异常通知：回滚事务
+      //  rollback();
+      e.printStackTrace();
+    } finally {
+      // 最终通知：释放资源
+      // release();
+    }
+    return rtValue;
+  }
+```
