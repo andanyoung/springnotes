@@ -5,4 +5,5 @@
   - [基础](/notes/spring.md)
   - [基于注解的spring](/notes/springIOC注解.md)
   - [Spring整合Junit](/notes/Spring整合Junit.md)
-  - [Spring整合AOP](/notes/SpringAOP.md)
+  - [SpringAOP](/notes/SpringAOP.md)
+  - [SpringAOP注解](/notes/SpringAOP注解.md)
