@@ -31,10 +31,45 @@
         </property>
     </bean>
 
-
     <!-- 开启SpringMVC框架注解的支持 -->
-    <mvc:annotation-driven conversion-service="conversionService"/>
+    <mvc:annotation-driven conversion-service="conversionService">
+    </mvc:annotation-driven>
     <mvc:resources location="/css/**" mapping="/css/"></mvc:resources>
     <mvc:resources location="/images/" mapping="/images/**"/>
     <mvc:resources location="/scripts/" mapping="/javascript/**"/>
+
+
+    <!-- 配置文件上传解析器 -->
+    <!-- id 的值是固定的-->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为 5MB -->
+        <property name="maxUploadSize">
+            <value>5242880</value>
+        </property>
+    </bean>
+
+    <!--配置自定义异常处理器-->
+    <bean id="handlerExceptionResolver" class="cn.andyoung.exception.SysExceptionResolver"></bean>
+
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--不要拦截的方法
+           <mvc:exclude-mapping path=""/>
+           -->
+            <mvc:mapping path="/*"/>
+            <bean id="handlerInterceptorDemo1"
+                  class="cn.andyoung.interceptor.MyInterceptor2"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <!--不要拦截的方法
+           <mvc:exclude-mapping path=""/>
+           -->
+            <mvc:mapping path="/*"/>
+
+            <bean id="handlerInterceptorDemo2"
+                  class="cn.andyoung.interceptor.MyInterceptor2"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

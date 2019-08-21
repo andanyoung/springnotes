@@ -606,3 +606,296 @@ public class SessionController {
   }
 }
 ```
+# 响应数据和结果视图
+## 返回值分类
+### 字符串
+- controller 方法返回字符串可以指定逻辑视图名，通过视图解析器解析为物理视图地址。
+指定逻辑视图名，经过视图解析器解析为 jsp 物理路径：/WEB-INF/pages/success.jsp
+```
+@RequestMapping("/hello")
+  public String hello() {
+    System.out.println("HELLO WORLD");
+    return "success";
+  }
+```
+### void
+- 我们知道 Servlet 原始 API 可以作为控制器中方法的参数：
+```
+@RequestMapping("/testReturnVoid")
+public void testReturnVoid(HttpServletRequest request,HttpServletResponse response) 
+throws Exception {
+}
+```
+> 在 controller 方法形参上可以定义 request 和 response，使用 request 或 response 指定响应结果：
+
+- 1、使用 request 转向页面，如下：
+request.getRequestDispatcher("/WEB-INF/pages/success.jsp").forward(request, 
+response);
+- 2、也可以通过 response 页面重定向：
+response.sendRedirect("testRetrunString")
+- 3、也可以通过 response 指定响应结果，例如响应 json 数据：
+response.setCharacterEncoding("utf-8");
+response.setContentType("application/json;charset=utf-8");
+response.getWriter().write("json 串")
+### ModelAndView
+ModelAndView 是 SpringMVC 为我们提供的一个对象，该对象也可以用作控制器方法的返回值。
+```
+/**
+   * 返回 ModeAndView
+   *
+   * @return
+   */
+  @RequestMapping("/testReturnModelAndView")
+  public ModelAndView modelAndView() {
+    ModelAndView mv = new ModelAndView();
+    //添加模型到对象中
+    mv.addObject("username", "张三");
+    // 用于设置逻辑视图的名称，视图解析器会根据名称前往指定的视图
+    mv.setViewName("return");
+    return mv;
+  }
+```
+### forward 转发
+- controller 方法在提供了 String 类型的返回值之后，默认就是请求转发。我们也可以写成：
+```
+/**
+   * 转发
+   *
+   * @return
+   */
+  public String testForward() {
+    System.out.println("ReturnController 的 testForward 方法执行了。。。。");
+    return "forward:/WEB-INF/pages/success.jsp";
+  }
+```
+- 需要注意的是，如果用了 formward：则路径必须写成实际视图 url，不能写逻辑视图。
+- 它相当于`request.getRequestDispatcher("url").forward(request,response)`。使用请求转发，既可以转发到 jsp，也可以转发到其他的控制器方法。
+### Redirect 重定向
+- contrller 方法提供了一个 String 类型返回值之后，它需要在返回值里使用:redirect:
+```
+/**
+   * 重定向
+   *
+   * @return
+   */
+  @RequestMapping("/testRedirect")
+  public String testRedirect() {
+    System.out.println("ReturnController 的 testRedirect 方法执行了。。。。");
+    return "redirect:testReturnModelAndView";
+  }
+```
+- 它相当于`response.sendRedirect(url)`。需要注意的是，如果是重定向到 jsp 页面，则 jsp 页面不能写在 WEB-INF 目录中，否则无法找到。
+## ResponseBody 响应 json 数据
+### 使用说明
+- 作用：
+该注解用于将 Controller 的方法返回的对象，通过 HttpMessageConverter 接口转换为指定格式的数据如：json,xml 等，通过 Response 响应给客户端
+### 使用示例
+- 需求：
+使用@ResponseBody 注解实现将 controller 方法返回对象转换为 json 响应给客户端。
+- 前置知识点：
+Springmvc 默认用 MappingJacksonHttpMessageConverter 对 json 数据进行转换，需要加入
+jackson 的包。
+```
+<dependency>
+  <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+      <version>2.7.0</version>
+</dependency>
+<dependency>
+  <groupId>com.fasterxml.jackson.core</groupId>
+  <artifactId>jackson-databind</artifactId>
+  <version>2.7.0</version>
+</dependency>
+<dependency>
+  <groupId>com.fasterxml.jackson.core</groupId>
+  <artifactId>jackson-annotations</artifactId>
+  <version>2.7.0</version>
+</dependency>
+```
+- jsp中的代码
+```
+<script type="text/javascript">
+    $(function () {
+        $("#testJson").click(function () {
+            $.ajax({
+                type: "post",
+                url: "${pageContext.request.contextPath}/testResponseJson",
+                contentType: "application/json;charset=utf-8",
+                data: '{"id":1,"username":"test","password":999.0}',
+                dataType: "json",
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        });
+    })
+</script>
+<!-- 测试异步请求 -->
+<input type="button" value="测试 ajax 请求 json 和响应 json" id="testJson"/>
+```
+- 控制器中的代码：
+```
+@RequestMapping("/testResponseJson")
+  public @ResponseBody User testResponseJson(@RequestBody User user) {
+    System.out.println("异步请求：" + user);
+    return user;
+  }
+```
+# SpringMVC 实现文件上传
+### 文件上传的必要前提
+- A form 表单的 enctype 取值必须是：multipart/form-data(默认值是:application/x-www-form-urlencoded)
+enctype:是表单请求正文的类型
+- B method 属性取值必须是 Post
+- C 提供一个文件选择域<input type=”file” />
+### 文件上传的原理分析
+当 form 表单的 enctype 取值不是默认值后，request.getParameter()将失效。 enctype=”application/x-www-form-urlencoded”时，form 表单的正文内容是：
+key=value&key=value&key=value
+当 form 表单的 enctype 取值为 Mutilpart/form-data 时，请求正文内容就变成：
+每一部分都是 MIME 类型描述的正文
+```
+-----------------------------7de1a433602ac 分界符
+Content-Disposition: form-data; name="userName" 协议头
+aaa 协议的正文
+-----------------------------7de1a433602ac
+Content-Disposition: form-data; name="file"; 
+filename="C:\Users\zhy\Desktop\fileupload_demofile\b.txt"
+Content-Type: text/plain 协议的类型（MIME 类型）
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+-----------------------------7de1a433602ac--
+```
+### 借助第三方组件实现文件上传
+使用 Commons-fileupload 组件实现文件上传，需要导入该组件相应的支撑 jar 包：Commons-fileupload 和commons-io。commons-io 不属于文件上传组件的开发 jar 文件，但Commons-fileupload 组件从 1.1 版本开始，它工作时需要 commons-io 包的支持。
+## springmvc 传统方式的文件上传
+### 说明
+> 传统方式的文件上传，指的是我们上传的文件和访问的应用存在于同一台服务器上。并且上传完成之后，浏览器可能跳转。
+- jsp 
+```
+
+```
+- Controller
+```
+@Controller
+public class Fileupload {
+  /**
+   * 文件上传
+   *
+   * @return
+   */
+  @RequestMapping("/fileupload")
+  public String fileuoload1(HttpServletRequest request) throws Exception {
+    System.out.println("文件上传...");
+
+    // 使用fileupload组件完成文件上传
+    // 上传的位置
+    String path = request.getSession().getServletContext().getRealPath("/uploads/");
+    // 判断，该路径是否存在
+    File file = new File(path);
+    if (!file.exists()) {
+      // 创建该文件夹
+      file.mkdirs();
+    }
+
+    // 解析request对象，获取上传文件项
+    DiskFileItemFactory factory = new DiskFileItemFactory();
+    ServletFileUpload upload = new ServletFileUpload(factory);
+    // 解析request
+    List<FileItem> items = upload.parseRequest(request);
+    // 遍历
+    for (FileItem item : items) {
+      // 进行判断，当前item对象是否是上传文件项
+      if (item.isFormField()) {
+        // 说明普通表单向
+      } else {
+        // 说明上传文件项
+        // 获取上传文件的名称
+        String filename = item.getName();
+        // 把文件的名称设置唯一值，uuid
+        String uuid = UUID.randomUUID().toString().replace("-", "");
+        filename = uuid + "_" + filename;
+        // 完成文件上传
+        item.write(new File(path, filename));
+        // 删除临时文件
+        item.delete();
+      }
+    }
+
+    return "success";
+  }
+
+  /**
+   * SpringMVC文件上传
+   *
+   * @return
+   */
+  @RequestMapping("/fileupload2")
+  public String fileuoload2(HttpServletRequest request, MultipartFile upload) throws Exception {
+    System.out.println(
+        "springmvc文件上传..." + request.getSession().getServletContext().getRealPath(""));
+
+    // 使用fileupload组件完成文件上传
+    // 上传的位置
+    String path = request.getSession().getServletContext().getRealPath("/uploads/");
+    // 判断，该路径是否存在
+    File file = new File(path);
+    if (!file.exists()) {
+      // 创建该文件夹
+      file.mkdirs();
+    }
+
+    // 说明上传文件项
+    // 获取上传文件的名称
+    String filename = upload.getOriginalFilename();
+    // 把文件的名称设置唯一值，uuid
+    String uuid = UUID.randomUUID().toString().replace("-", "");
+    filename = uuid + "_" + filename;
+    // 完成文件上传
+    upload.transferTo(new File(path, filename));
+
+    return "success";
+  }
+
+  /**
+   * 跨服务器文件上传
+   *
+   * @return
+   */
+  @RequestMapping("/fileupload3")
+  public String fileuoload3(MultipartFile upload) throws Exception {
+    System.out.println("跨服务器文件上传...");
+
+    // 定义上传文件服务器路径
+    String path = "http://localhost:9090/uploads/";
+
+    // 说明上传文件项
+    // 获取上传文件的名称
+    String filename = upload.getOriginalFilename();
+    // 把文件的名称设置唯一值，uuid
+    String uuid = UUID.randomUUID().toString().replace("-", "");
+    filename = uuid + "_" + filename;
+
+    // 创建客户端的对象
+    Client client = Client.create();
+
+    // 和图片服务器进行连接
+    WebResource webResource = client.resource(path + filename);
+
+    // 上传文件
+    webResource.put(upload.getBytes());
+
+    return "success";
+  }
+}
+
+```
+### 配置解析器
+```
+ <!-- 配置文件上传解析器 -->
+    <!-- id 的值是固定的-->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为 5MB -->
+        <property name="maxUploadSize">
+            <value>5242880</value>
+        </property>
+    </bean>
+```

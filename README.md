@@ -11,3 +11,5 @@
   - [基本概念](/notes/springmvc/基本概念.md)
   - [spring mvc](/notes/springmvc/springmvc.md)
   - [SpringMVC 注解](/notes/springmvc/SpringMVC注解.md)
+  - [SpringMVC异常处理](/notes/springmvc/SpringMVC异常处理.md)
+  - [SpringMVC拦截器](/notes/springmvc/SpringMVC拦截器.md)
