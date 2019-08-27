@@ -41,4 +41,42 @@
     <select id="findAll" resultMap="userMap">
       select u.*,a.id as aid ,a.uid,a.money from user u left outer join account a on u.id =a.uid
     </select>
+
+    <!--使用 assocation 实现延迟加载-->
+    <!-- 建立对应关系 -->
+    <resultMap type="account" id="accountMapLazy">
+        <id column="aid" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="money" property="money"/>
+        <!-- 它是用于指定从表方的引用实体属性的 -->
+        <association property="user" javaType="user"
+                     select="cn.andyoung.dao.IUserDao.findById"
+                     column="uid">
+        </association>
+    </resultMap>
+    <select id="findAllLazy" resultMap="accountMapLazy">
+        select * from account
+    </select>
+
+    <resultMap type="user" id="userMapLazyC">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"/>
+        <result column="address" property="address"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <!-- collection 是用于建立一对多中集合属性的对应关系
+        ofType 用于指定集合元素的数据类型
+        select 是用于指定查询账户的唯一标识（账户的 dao 全限定类名加上方法名称）
+        column 是用于指定使用哪个字段的值作为条件查询
+        -->
+        <collection property="accounts" ofType="account"
+                    select="cn.andyoung.dao.IAccountDao.findByUid"
+                    column="id">
+        </collection>
+    </resultMap>
+    <!-- 配置查询所有操作 -->
+    <select id="findAll" resultMap="userMapLazyC">
+      select * from user
+    </select>
+
 </mapper>

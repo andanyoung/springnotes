@@ -62,4 +62,13 @@ public class IAccountDaoTest {
       System.out.println(user.getAccounts());
     }
   }
+
+  @Test
+  public void findAllLazy() {
+    List<Account> accounts = accountDao.findAllLazy();
+    for (Account au : accounts) {
+      System.out.println(au);
+      // System.out.println(au.getUser());
+    }
+  }
 }

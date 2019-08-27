@@ -41,4 +41,20 @@
     <select id="findAll" resultMap="userMap">
       select u.*,a.id as aid ,a.uid,a.money from user u left outer join account a on u.id =a.uid
     </select>
+
+    <!--使用 assocation 实现延迟加载-->
+    <!-- 建立对应关系 -->
+    <resultMap type="account" id="accountMapLazy">
+        <id column="aid" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="money" property="money"/>
+        <!-- 它是用于指定从表方的引用实体属性的 -->
+        <association property="user" javaType="user"
+                     select="cn.andyoung.dao.IUserDao.findById"
+                     column="uid">
+        </association>
+    </resultMap>
+    <select id="findAllLazy" resultMap="accountMapLazy">
+        select * from account
+    </select>
 </mapper>

@@ -20,3 +20,6 @@
   - [MyBatis入门](/notes/MyBatis/MyBatis入门.md)
   - [MyBatis参数配置](/notes/MyBatis/MyBatis参数配置.md)
   - [Mybatis的动态 SQL 语句](/notes/MyBatis/Mybatis的动态SQL语句.md)
+  - [Mybatis多表查询](/notes/MyBatis/Mybatis多表查询.md)
+  - [Mybatis延迟加载缓存策略](/notes/MyBatis/Mybatis延迟加载策略.md)
+  - [Mybatis 注解开发](/notes/MyBatis/Mybatis注解开发.md)
