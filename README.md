@@ -17,5 +17,6 @@
   - [基础](/notes/springboot/SpringBoot基础.md)
 ### 第三方框架
 - MyBatis
-  - [MyBatis入门 (一)](/notes/MyBatis/MyBatis入门(一).md)
-  - [MyBatis参数配置 (二)](/notes/MyBatis/MyBatis参数配置(二).md)
+  - [MyBatis入门](/notes/MyBatis/MyBatis入门.md)
+  - [MyBatis参数配置](/notes/MyBatis/MyBatis参数配置.md)
+  - [Mybatis的动态 SQL 语句](/notes/MyBatis/Mybatis的动态SQL语句.md)

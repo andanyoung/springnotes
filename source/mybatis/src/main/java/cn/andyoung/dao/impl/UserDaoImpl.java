@@ -82,4 +82,14 @@ public class UserDaoImpl implements IUserDao {
   public List<User> findByName(String username) {
     return null;
   }
+
+  @Override
+  public List<User> findByUser(User user) {
+    return null;
+  }
+
+  @Override
+  public List<User> findInIds(QueryVo vo) {
+    return null;
+  }
 }

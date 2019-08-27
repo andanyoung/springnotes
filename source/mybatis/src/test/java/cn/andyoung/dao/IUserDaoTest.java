@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -134,6 +135,35 @@ public class IUserDaoTest {
     List<User> users = userDao.findByVo(vo);
     for (User u : users) {
       System.out.println(u);
+    }
+  }
+
+  @Test
+  public void testFindByUser() {
+    User u = new User();
+    u.setUsername("%z%");
+    u.setAddress("%n%");
+    // 6.执行操作
+    List<User> users = userDao.findByUser(u);
+    for (User user : users) {
+      System.out.println(user);
+    }
+  }
+
+  @Test
+  public void testFindInIds() {
+    QueryVo vo = new QueryVo();
+    List<Integer> ids = new ArrayList<>();
+    ids.add(1);
+    ids.add(2);
+    ids.add(3);
+    ids.add(6);
+    ids.add(7);
+    vo.setIds(ids);
+    // 6.执行操作
+    List<User> users = userDao.findInIds(vo);
+    for (User user : users) {
+      System.out.println(user);
     }
   }
 }

@@ -70,4 +70,50 @@ sex as userSex,address as userAddress from user
     <select id="findByVo" resultType="cn.andyoung.domain.User" parameterType="cn.andyoung.domain.QueryVo">
         select * from user where username like #{user.username};
     </select>
+
+
+    <!--动态sql-->
+    <!-- 配置查询用户操作 -->
+    <select id="findByUser" resultType="User">
+        select * from user where 1 = 1
+        <if test="username !=null and username != ''">
+            and username like #{username}
+        </if>
+        <if test="address != null">
+            and address like #{address}
+        </if>
+    </select>
+
+    <!-- 根据用户信息查询 -->
+    <select id="findByUser2" resultType="user" parameterType="user">
+        <!--<include refid="defaultSql"></include>-->
+        select * from user
+        <where>
+            <if test="username!=null and username != '' ">
+                and username like #{username}
+            </if>
+            <if test="address != null">
+                and address like #{address}
+            </if>
+        </where>
+    </select>
+
+    <!-- 查询所有用户在 id 的集合之中 -->
+    <select id="findInIds" resultType="user" parameterType="cn.andyoung.domain.QueryVo">
+        <!-- select * from user where id in (1,2,3,4,5); -->
+        select * from user
+        <where>
+            <if test="ids != null and ids.size() > 0">
+                <foreach collection="ids" open="id in ( " close=")" item="uid"
+                         separator=",">
+                    #{uid}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <!-- 抽取重复的语句代码片段 -->
+    <sql id="defaultSql">
+      select * from user
+    </sql>
 </mapper>

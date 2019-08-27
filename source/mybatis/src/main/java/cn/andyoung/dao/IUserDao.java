@@ -68,4 +68,20 @@ public interface IUserDao {
    * @return
    */
   List<User> findByVo(QueryVo vo);
+
+  /**
+   * 使用动态sql 根据用户信息，查询用户列表
+   *
+   * @param user
+   * @return
+   */
+  List<User> findByUser(User user);
+
+  /**
+   * 根据 id 集合查询用户
+   *
+   * @param vo
+   * @return
+   */
+  List<User> findInIds(QueryVo vo);
 }

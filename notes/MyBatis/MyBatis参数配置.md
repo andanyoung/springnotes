@@ -298,5 +298,47 @@ URI：Uniform Resource Identifier 统一资源标识符
 ```
 ### <package name=""/>
 > 注册指定包下的所有 mapper 接口
-如：<package name="cn.andyoung.mybatis.mapper"/>
+如：`<package name="cn.andyoung.mybatis.mapper"/>`
 注意：此种方法要求 mapper 接口名称和 mapper 映射文件名称相同，且放在同一个目录中。
+## Mybatis 的连接池技术
+我们在前面的 WEB 也学习过类似的连接池技术，而在 Mybatis 中也有连接池技术，但是它采用的是自
+己的连接池技术。在 Mybatis 的 SqlMapConfig.xml 配置文件中，通过`<dataSource type=”pooled”>`来实现 Mybatis 中连接池的配置。
+> 我们的数据源配置就是在 SqlMapConfig.xml 文件中，具体配置如下：
+```
+<!-- 配置数据源（连接池）信息 -->
+<dataSource type="POOLED"> 
+  <property name="driver" value="${jdbc.driver}"/>
+  <property name="url" value="${jdbc.url}"/>
+  <property name="username" value="${jdbc.username}"/>
+  <property name="password" value="${jdbc.password}"/>
+</dataSource>
+```
+MyBatis 在初始化时，根据`<dataSource>`的 type 属性来创建相应类型的的数据源 DataSource，即：
+- type=”POOLED”：MyBatis 会创建 PooledDataSource 实例
+- type=”UNPOOLED” ： MyBatis 会创建 UnpooledDataSource 实例
+- type=”JNDI”：MyBatis 会从 JNDI 服务上查找 DataSource 实例，然后返回使用
+> 在这三种数据源中，我们一般采用的是 POOLED 数据源（很多时候我们所说的数据源就是为了更好的管理数据
+库连接，也就是我们所说的连接池技术）。
+## Mybatis 的事务控制
+在 JDBC 中我们可以通过手动方式将事务的提交改为手动方式，通过 setAutoCommit()方法就可以调整。
+那么我们的 Mybatis 框架因为是对 JDBC 的封装，所以 Mybatis 框架的事务控制方式，本身也是用 JDBC 的setAutoCommit()方法来设置事务提交方式的。Mybatis 中事务的提交方式，本质上就是调用 JDBC 的 setAutoCommit()来实现事务控制。
+通过上面的研究和分析，现在我们一起思考，为什么 CUD 过程中必须使用 sqlSession.commit()提交事
+务？主要原因就是在连接池中取出的连接，都会将调用 connection.setAutoCommit(false)方法，这样我们
+就必须使用 sqlSession.commit()方法，相当于使用了 JDBC 中的 connection.commit()方法实现事务提
+交。
+明白这一点后，我们现在一起尝试不进行手动提交，一样实现 CUD 操作。
+```
+@Before//在测试方法执行之前执行
+public void init()throws Exception {
+    //1.读取配置文件
+    in = Resources.getResourceAsStream("SqlMapConfig.xml");
+    //2.创建构建者对象
+    SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+    //3.创建 SqlSession 工厂对象
+    factory = builder.build(in);
+    //4.创建 SqlSession 对象 打开自动提交
+    session = factory.openSession(true);
+    //5.创建 Dao 的代理对象
+    userDao = session.getMapper(IUserDao.class);
+}
+```
