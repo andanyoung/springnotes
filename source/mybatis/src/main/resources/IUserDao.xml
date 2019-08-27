@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.andyoung.dao.IUserDao">
+    <!-- 配置查询所有操作 -->
+    <select id="findAll" resultType="cn.andyoung.domain.User">
+      select * from user
+    </select>
+
+    <!--修改映射配置-->
+    <select id="findAllT" resultType="cn.andyoung.domain.User1">
+      select id as userId,username as userName,birthday as userBirthday,
+sex as userSex,address as userAddress from user
+    </select>
+
+
+    <!-- 建立 User 实体和数据库表的对应关系
+    type 属性：指定实体类的全限定类名
+    id 属性：给定一个唯一标识，是给查询 select 标签引用用的。
+    -->
+    <resultMap type="cn.andyoung.domain.User1" id="userMap">
+        <id column="id" property="userId"/>
+        <result column="username" property="userName"/>
+        <result column="sex" property="userSex"/>
+        <result column="address" property="userAddress"/>
+        <result column="birthday" property="userBirthday"/>
+    </resultMap>
+
+    <!--定义 resultMap-->
+    <select id="findAllT2" resultMap="userMap">
+      select * from user
+    </select>
+    <select id="findById" resultType="cn.andyoung.domain.User" parameterType="int">
+      select * from user where id = #{uid}
+    </select>
+
+    <!-- 保存用户-->
+    <insert id="saveUser" parameterType="cn.andyoung.domain.User">
+        <!-- 配置保存时获取插入的 id -->
+        <selectKey keyColumn="id" keyProperty="id" resultType="int">
+            select last_insert_id();
+        </selectKey>
+        insert into user(username,birthday,sex,address)
+        values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="cn.andyoung.domain.User">
+        update user set username=#{username},birthday=#{birthday},sex=#{sex},
+          address=#{address} where id=#{id}
+    </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id = #{uid}
+    </delete>
+
+    <!-- 根据名称模糊查询 -->
+    <select id="findByName" resultType="cn.andyoung.domain.User" parameterType="String">
+      select * from user where username like #{username}
+    </select>
+
+    <!-- 查询总记录条数 -->
+    <select id="findTotal" resultType="int">
+      select count(*) from user;
+    </select>
+
+    <!-- 根据用户名称模糊查询，参数变成一个 QueryVo 对象了 -->
+    <select id="findByVo" resultType="cn.andyoung.domain.User" parameterType="cn.andyoung.domain.QueryVo">
+        select * from user where username like #{user.username};
+    </select>
+</mapper>

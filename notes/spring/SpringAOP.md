@@ -4,7 +4,7 @@
 AOP：全称是 Aspect Oriented Programming 即：面向切面编程。
 简单的说它就是把我们程序重复的代码抽取出来，在需要执行的时候，使用动态代理的技术，在不修改源码的
 基础上，对我们的已有方法进行增强。
-![srpingaop](../../image/springAOP.png)
+![srpingaop](https://github.com/AndyYoungCN/springnotes/raw/master/image/springAOP.png)
 ### AOP 的作用及优势
 - 作用：
 在程序运行期间，不修改源码对已有方法进行增强。

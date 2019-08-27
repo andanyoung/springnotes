@@ -23,7 +23,7 @@ MVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应
 
 ## spring 的体系结构
 
-![spring体系结构.png](../../image/spring体系结构.png)
+![spring体系结构.png](https://github.com/AndyYoungCN/springnotes/raw/master/image/spring%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png)
 
 ## spring 原理概念
 参考

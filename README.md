@@ -15,3 +15,7 @@
   - [SpringMVC拦截器](/notes/springmvc/SpringMVC拦截器.md)
 - springboot
   - [基础](/notes/springboot/SpringBoot基础.md)
+### 第三方框架
+- MyBatis
+  - [MyBatis入门 (一)](/notes/MyBatis/MyBatis入门(一).md)
+  - [MyBatis参数配置 (二)](/notes/MyBatis/MyBatis参数配置(二).md)
