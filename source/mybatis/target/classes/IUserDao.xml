@@ -111,4 +111,9 @@ sex as userSex,address as userAddress from user
             </if>
         </where>
     </select>
+
+    <!-- 抽取重复的语句代码片段 -->
+    <sql id="defaultSql">
+      select * from user
+    </sql>
 </mapper>
