@@ -36,7 +36,7 @@ public class CacheController {
   }
 
   @RequestMapping("/cache")
-  @Cacheable(value = "redisTemplate233")
+  @Cacheable(value = "cache1")
   public String cache() {
 
     return new User().getUser(1);

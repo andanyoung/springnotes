@@ -3,10 +3,6 @@ package cn.andyoung.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
@@ -17,11 +13,7 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @Configuration
-@ConditionalOnClass(RedisOperations.class)
-@EnableConfigurationProperties(RedisProperties.class)
-public class RedisCache extends CachingConfigurerSupport {
-
-  @Autowired private RedisConnectionFactory connectionFactory;
+public class RedisConfig extends CachingConfigurerSupport {
 
   @Override
   public KeyGenerator keyGenerator() {
@@ -36,17 +28,11 @@ public class RedisCache extends CachingConfigurerSupport {
     };
   }
 
-  /**
-   * 声明缓存管理器
-   *
-   * @param redisTemplate
-   * @return
-   */
+  /** * 选择redis作为默认缓存工具 * @param redisTemplate * @return */
   //  @Bean
   //  public CacheManager cacheManager(RedisTemplate<String, Object> redisTemplate) {
-  //    RedisSerializationContext.SerializationPair serializationPair =
-  //        RedisSerializationContext.SerializationPair.fromSerializer();
-  //    return new RedisCacheManager(redisTemplate);
+  //    RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
+  //    return rcm;
   //  }
 
   @Bean
