@@ -1,3 +1,6 @@
+# Mybatis 日志输出
+在resources文件下新增日志配置文件`logback-spring.xml`具体配置解析参考[Spring Boot的日志详解](../springboot/SpringBoot的日志详解.md)
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <contextName>spring-boot-logging</contextName>
@@ -33,9 +36,16 @@
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </root>
-    <logger name="cn.andyoung.logback.controller" level="WARN">
-        <appender-ref ref="console"/>
-        <appender-ref ref="file"/>
-    </logger>
+    <!-- mybatis日志打印-->
+    <logger name="org.apache.ibatis" level="DEBUG"/>
+    <logger name="java.sql" level="DEBUG"/>
 
+    <!--  项目 mapper 路径
+            console控制台显示sql语句：STDOUT.filter.level -> debug级别
+    -->
+    <logger name="cn.andyoung.mapper" level="DEBUG">
+    </logger>
 </configuration>
+```
+## 运行结果
+![](../../image/4AE1117E-42E2-42db-AD0D-5BD05D7EFD2B.png)

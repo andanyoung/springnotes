@@ -37,5 +37,11 @@
         <mapper resource="IUserDao.xml"/>
         <mapper resource="IAccountDao.xml"/>
         <mapper resource="IRoleDao.xml"/>
+
+        <!-- 配置 dao 接口的位置，它有两种方式
+        第一种：使用 mapper 标签配置 class 属性
+        第二种：使用 package 标签，直接指定 dao 接口所在的包
+        -->
+        <!--<package name="cn.andyoung.dao"/>-->
     </mappers>
 </configuration>

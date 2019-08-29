@@ -19,4 +19,6 @@ public interface IAccountDao {
    * @return
    */
   List<Account> findAllLazy();
+
+  List<Account> findAllLazyC();
 }

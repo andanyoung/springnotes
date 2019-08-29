@@ -33,9 +33,14 @@
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </root>
-    <logger name="cn.andyoung.logback.controller" level="WARN">
-        <appender-ref ref="console"/>
-        <appender-ref ref="file"/>
+    <!-- mybatis日志打印-->
+    <logger name="org.apache.ibatis" level="DEBUG"/>
+    <logger name="java.sql" level="DEBUG"/>
+
+    <!--  项目 mapper 路径
+            console控制台显示sql语句：STDOUT.filter.level -> debug级别
+    -->
+    <logger name="cn.andyoung.mapper" level="DEBUG">
     </logger>
 
 </configuration>

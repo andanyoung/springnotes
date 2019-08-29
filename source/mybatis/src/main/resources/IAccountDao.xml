@@ -75,7 +75,7 @@
         </collection>
     </resultMap>
     <!-- 配置查询所有操作 -->
-    <select id="findAll" resultMap="userMapLazyC">
+    <select id="findAllLazyC" resultMap="userMapLazyC">
       select * from user
     </select>
 

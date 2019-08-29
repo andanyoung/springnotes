@@ -57,4 +57,26 @@
     <select id="findAllLazy" resultMap="accountMapLazy">
         select * from account
     </select>
+
+    <resultMap type="user" id="userMapLazyC">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"/>
+        <result column="address" property="address"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <!-- collection 是用于建立一对多中集合属性的对应关系
+        ofType 用于指定集合元素的数据类型
+        select 是用于指定查询账户的唯一标识（账户的 dao 全限定类名加上方法名称）
+        column 是用于指定使用哪个字段的值作为条件查询
+        -->
+        <collection property="accounts" ofType="account"
+                    select="cn.andyoung.dao.IAccountDao.findByUid"
+                    column="id">
+        </collection>
+    </resultMap>
+    <!-- 配置查询所有操作 -->
+    <select id="findAllLazyC" resultMap="userMapLazyC">
+      select * from user
+    </select>
+
 </mapper>
