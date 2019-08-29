@@ -1,0 +1,8 @@
+16:41:02.118 [http-nio-8888-exec-7] WARN  cn.andyoung.logback.controller.Log - warn 级别的日志
+16:41:02.118 [http-nio-8888-exec-7] WARN  cn.andyoung.logback.controller.Log - warn 级别的日志
+16:41:02.143 [http-nio-8888-exec-7] ERROR cn.andyoung.logback.controller.Log - error 级别的日志
+16:41:02.143 [http-nio-8888-exec-7] ERROR cn.andyoung.logback.controller.Log - error 级别的日志
+16:41:34.685 [http-nio-8888-exec-8] WARN  cn.andyoung.logback.controller.Log - warn 级别的日志
+16:41:34.685 [http-nio-8888-exec-8] WARN  cn.andyoung.logback.controller.Log - warn 级别的日志
+16:41:34.685 [http-nio-8888-exec-8] ERROR cn.andyoung.logback.controller.Log - error 级别的日志
+16:41:34.685 [http-nio-8888-exec-8] ERROR cn.andyoung.logback.controller.Log - error 级别的日志
