@@ -18,6 +18,7 @@
   - [Spring常用注解](/notes/springboot/Spring常用注解.md)
   - [Redis](/notes/springboot/Redis.md)
   - [日志管理LogBack](/notes/springboot/SpringBoot的日志详解.md)
+  - [SpringBoot之Druid.md](/notes/springboot/SpringBoot之Druid.md)
 ### 第三方框架
 - MyBatis
   - [MyBatis入门](/notes/MyBatis/MyBatis入门.md)

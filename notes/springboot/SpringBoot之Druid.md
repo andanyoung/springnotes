@@ -217,7 +217,49 @@ public class DruidStatController {
   }
 ]
 ```
-[demo获取,欢迎start](https://github.com/AndyYoungCN/springnotes/tree/master/source/druid4mybatis)
+## 基于logback的日志
+`application.properties`中添加配置如`spring.datasource.druid.filters=stat,wall,logFilter`
+### 添加配置`logback-spring.xml`文件
+详细配置教程查看[日志管理LogBack](https://github.com/AndyYoungCN/springnotes/blob/master/notes/springboot/SpringBoot%E7%9A%84%E6%97%A5%E5%BF%97%E8%AF%A6%E8%A7%A3.md)
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>spring-boot-logging</contextName>
+    <property name="logPath" value="D:/java/log"/>
+
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件-->
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/spring-boot-logging.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 添加.gz 历史日志会启用压缩 大大缩小日志文件所占空间 -->
+            <fileNamePattern>${logPath}/spring-boot-logging.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <!-- 日志保存周期 -->
+            <maxHistory>30</maxHistory>
+            <!-- 总大小 -->
+            <totalSizeCap>100KB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="Info">
+        <appender-ref ref="console"/>
+        <appender-ref ref="file"/>
+    </root>
+    <logger name="cn.andyoung.druid4mybatis.dao" level="DEBUG"/>
+    <!--记录druid-sql的记录-->
+    <logger name="druid.sql.Statement" level="DEBUG"/>
+</configuration>
+```
 ## 如何配置多数据源
 - 添加配置
 ```
@@ -259,3 +301,5 @@ public DataSource dataSourceTwo(){
     return DruidDataSourceBuilder.create().build();
 }
 ```
+
+[demo获取,欢迎start](https://github.com/AndyYoungCN/springnotes/tree/master/source/druid4mybatis)
