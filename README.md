@@ -27,3 +27,6 @@
   - [Mybatis延迟加载缓存策略](/notes/MyBatis/Mybatis延迟加载策略.md)
   - [Mybatis 注解开发](/notes/MyBatis/Mybatis注解开发.md)
   - [Mybatis 日志输出](/notes/MyBatis/Mybatis日志输出.md)
+  - [Mybatis Plus]
+  - [Mybatis Page]
+  - [Mybatis 主从]
