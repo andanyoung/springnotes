@@ -45,3 +45,13 @@ public class AccountServiceTest {
 > 这个原因是这样的：
 >- 第一：当我们在 xml 中配置了一个 bean，spring 加载配置文件创建容器时，就会创建对象。
 >- 第二：测试类只是我们在测试功能时使用，而在项目中它并不参与程序逻辑，也不会解决需求上的问题，所以创建完了，并没有使用。那么存在容器中就会造成资源的浪费。所以，基于以上两点，我们不应该把测试配置到 xml 文件中。
+
+### Springboot 中的junit配置
+```
+ @RunWith(SpringRunner.class)
+ @SpringBootTest
+ public class AccountServiceTest {
+     @Autowired
+    private IAccountService as ; 
+}
+```

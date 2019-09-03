@@ -268,19 +268,19 @@ spring.datasource.username=
 spring.datasource.password=
 ```
 
-# Druid 数据源配置，继承spring.datasource.* 配置，相同则覆盖
+### Druid 数据源配置，继承spring.datasource.* 配置，相同则覆盖
 ```
 spring.datasource.druid.initial-size=5
 spring.datasource.druid.max-active=5
 ```
 
-# Druid 数据源 1 配置，继承spring.datasource.druid.* 配置，相同则覆盖
+### Druid 数据源 1 配置，继承spring.datasource.druid.* 配置，相同则覆盖
 ```
 spring.datasource.druid.one.max-active=10
 spring.datasource.druid.one.max-wait=10000
 ```
 
-# Druid 数据源 2 配置，继承spring.datasource.druid.* 配置，相同则覆盖
+### Druid 数据源 2 配置，继承spring.datasource.druid.* 配置，相同则覆盖
 ```
 spring.datasource.druid.two.max-active=20
 spring.datasource.druid.two.max-wait=20000

@@ -16,11 +16,12 @@
 
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <!-- 添加.gz 历史日志会启用压缩 大大缩小日志文件所占空间 -->
-            <fileNamePattern>${logPath}/spring-boot-logging.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <!--<fileNamePattern>${logPath}/spring-boot-logging.%d{yyyy-MM-dd}.log.zip</fileNamePattern>-->
             <!-- 日志保存周期 -->
             <maxHistory>30</maxHistory>
+            <maxFileSize>2MB</maxFileSize>
             <!-- 总大小 -->
-            <totalSizeCap>100KB</totalSizeCap>
+            <totalSizeCap>1GB</totalSizeCap>
         </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>

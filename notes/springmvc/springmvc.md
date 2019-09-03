@@ -2,12 +2,12 @@
 ## 创建项目
 ### 简单的启动项目
 - 选择Maven webapp
-![newWebModule](../../image/newWebModule.png)
+![newWebModule](https://github.com/AndyYoungCN/springnotes/raw/master/image/newWebModule.png)
 
 - 配置Tomcat
-![配置Tomcat](../../image/配置Tomcat.png)
+![配置Tomcat](https://github.com/AndyYoungCN/springnotes/raw/master/image/%E9%85%8D%E7%BD%AETomcat.png)
 - run 
-![run](../../image/run.png)
+![run](https://github.com/AndyYoungCN/springnotes/raw/master/image/run.png)
 - pom.xml
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -205,14 +205,14 @@ public class HelloController {
 ```
 ## 执行过程及原理分析
 ### 执行过程
-![执行过程及原理分析](../../image/springmvc案例的执行过程.png)
+![执行过程及原理分析](https://github.com/AndyYoungCN/springnotes/raw/master/image/springmvc%E6%A1%88%E4%BE%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png)
 - 1、服务器启动，应用被加载。读取到 web.xml 中的配置创建 spring 容器并且初始化容器中的对象。
 2、浏览器发送请求，被 DispatherServlet 捕获，该 Servlet 并不处理请求，而是把请求转发出去。转发的路径是根据请求 URL，匹配@RequestMapping 中的内容。
 3、匹配到了后，执行对应方法。该方法有一个返回值。
 4、根据方法的返回值，借助 InternalResourceViewResolver 找到对应的结果视图。
 5、渲染结果视图，响应浏览器。
 ### SpringMVC的请求响应流程 
-![SpringMVC的请求响应流程](../../image/SpringMVC的请求响应流程.png)
+![SpringMVC的请求响应流程](https://github.com/AndyYoungCN/springnotes/raw/master/image/SpringMVC%E7%9A%84%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%B5%81%E7%A8%8B.png)
 ### DispatcherServlet：前端控制器
 用户请求到达前端控制器，它就相当于 mvc 模式中的 c，dispatcherServlet 是整个流程控制的中心，由它调用其它组件处理用户的请求，dispatcherServlet 的存在降低了组件之间的耦合性。
 ### HandlerMapping：处理器映射器

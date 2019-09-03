@@ -2,7 +2,7 @@
 ## 异常处理的思路
 - 系统中异常包括两类：预期异常和运行时异常 RuntimeException，前者通过捕获异常从而获取异常信息，后者主要通过规范代码开发、测试通过手段减少运行时异常的发生。
 - 系统的 dao、service、controller 出现都通过 throws Exception 向上抛出，最后由 springmvc 前端控制器交由异常处理器进行异常处理，如下图：
-![异常处理的思路](../../image/异常处理的思路.png)
+![异常处理的思路](https://github.com/AndyYoungCN/springnotes/raw/master/image/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%9A%84%E6%80%9D%E8%B7%AF.png)
 ### 编写异常类和错误页面
 ```
 public class SycException extends Exception {

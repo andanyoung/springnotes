@@ -16,6 +16,7 @@
 ### 使用注解方式开发持久层接口
 ```
 /** 给予注解的dao */
+@Mapper
 public interface IUserAnnoDao {
 
   /**
@@ -204,3 +205,27 @@ public interface IUserAnnoDao {
 @CacheNamespace(blocking=true)//mybatis 基于注解方式实现配置二级缓存
 public interface IUserDao {}
 ```
+## @Mappe与@MapperScan关系
+### @Mapper
+为了让DemoMapper能够让别的类进行引用，我们可以在DemMapper类上添加@Mapper注解：
+```
+@Mapper  
+public interface DemoMapper {  
+    @Insert("insert into Demo(name) values(#{name})")  
+    @Options(keyProperty="id",keyColumn="id",useGeneratedKeys=true)  
+    public void save(Demo demo);  
+}  
+```
+直接在Mapper类上面添加注解@Mapper，这种方式要求每一个mapper类都需要添加此注解，麻烦。
+### @MapperScan
+```
+@SpringBootApplication  
+//@MapperScan({"cn.andyoung.*.mapper","org.kfit.*.mapper"})  
+@MapperScan("cn.andyoung.*.mapper")  
+public class App {  
+    public static void main(String[] args) {  
+       SpringApplication.run(App.class, args);  
+    }  
+} 
+```
+如果mapper类没有在Spring Boot主程序可以扫描的包或者子包下面，可以使用如下方式进行配置：

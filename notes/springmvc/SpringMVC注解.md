@@ -746,7 +746,7 @@ jackson 的包。
 - A form 表单的 enctype 取值必须是：multipart/form-data(默认值是:application/x-www-form-urlencoded)
 enctype:是表单请求正文的类型
 - B method 属性取值必须是 Post
-- C 提供一个文件选择域<input type=”file” />
+- C 提供一个文件选择域`<input type=”file” />`
 ### 文件上传的原理分析
 当 form 表单的 enctype 取值不是默认值后，request.getParameter()将失效。 enctype=”application/x-www-form-urlencoded”时，form 表单的正文内容是：
 key=value&key=value&key=value
@@ -765,13 +765,9 @@ bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 ```
 ### 借助第三方组件实现文件上传
 使用 Commons-fileupload 组件实现文件上传，需要导入该组件相应的支撑 jar 包：Commons-fileupload 和commons-io。commons-io 不属于文件上传组件的开发 jar 文件，但Commons-fileupload 组件从 1.1 版本开始，它工作时需要 commons-io 包的支持。
-## springmvc 传统方式的文件上传
+## springmvc传统方式的文件上传  
 ### 说明
 > 传统方式的文件上传，指的是我们上传的文件和访问的应用存在于同一台服务器上。并且上传完成之后，浏览器可能跳转。
-- jsp 
-```
-
-```
 - Controller
 ```
 @Controller
