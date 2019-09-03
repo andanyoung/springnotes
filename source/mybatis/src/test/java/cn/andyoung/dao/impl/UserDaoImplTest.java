@@ -53,7 +53,7 @@ public class UserDaoImplTest {
   @Test
   public void saveUser() {
     User user = new User();
-    user.setUsername("add user");
+    user.setUsername("add user" + System.currentTimeMillis());
     user.setSex("n");
     user.setAddress("nb");
     user.setBirthday(new Date());
