@@ -29,6 +29,6 @@
   - [Mybatis 注解开发](/notes/MyBatis/Mybatis注解开发.md)
   - [Mybatis 日志输出](/notes/MyBatis/Mybatis日志输出.md)
   - [MyBatis 开启事务](/notes/MyBatis/MyBatis开启事务.md)
-  - [Mybatis Plus]
+  - [Mybatis Plus](https://mybatis.plus/guide/)
   - [Mybatis Page]
   - [Mybatis 主从]
