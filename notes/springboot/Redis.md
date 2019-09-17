@@ -325,3 +325,5 @@ public class Redis {
   }
 }
 ```
+
+> [高级进阶-通过spring-boot-starter-data-redis源码了解starter和autoconfigure模块](https://github.com/AndyYoungCN/springnotes/blob/master/notes/springnotes/notes/source/1.spring-boot-starter-data-redis.md)
