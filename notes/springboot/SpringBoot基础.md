@@ -66,19 +66,19 @@ SpringBoot对上述Spring的缺点进行的改善和优化，基于约定优于�
 
 使用idea工具创建一个maven工程，该工程为普通的java工程即可
 
-![](../../image/1.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/1.png?raw=true)
 
 
 
-![](../../image/2.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/2.png?raw=true)
 
 
 
-![](../../image/3.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/3.png?raw=true)
 
 
 
-![](../../image/4.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/4.png?raw=true)
 
 
 
@@ -177,7 +177,7 @@ tomcat已经起步，端口监听8080，web应用的虚拟工程名称为空
 
 打开浏览器访问url地址为：http://localhost:8080/quick
 
-![](../../image/5.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/5.png?raw=true)
 
 ## 2.2 快速入门解析
 
@@ -202,23 +202,23 @@ tomcat已经起步，端口监听8080，web应用的虚拟工程名称为空
 
 出现这种情况，并不是热部署配置问题，其根本原因是因为Intellij IEDA默认情况下不会自动编译，需要对IDEA进行自动编译的设置，如下：
 
-![](../../image/19.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/19.png?raw=true)
 
 然后 Shift+Ctrl+Alt+/，选择Registry
 
-![](../../image/20.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/20.png?raw=true)
 
 ### 2.2.4 使用idea快速创建SpringBoot项目
 
-![](../../image/6.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/6.png?raw=true)
 
-![](../../image/7.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/7.png?raw=true)
 
-![](../../image/8.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/8.png?raw=true)
 
-![](../../image/9.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/9.png?raw=true)
 
-![](../../image/10.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/10.png?raw=true)
 
 
 
@@ -511,7 +511,7 @@ protected List<String> getCandidateConfigurations(AnnotationMetadata metadata,
 
 其中，SpringFactoriesLoader.loadFactoryNames 方法的作用就是从META-INF/spring.factories文件中读取指定类对应的类名称列表 
 
-![](../../image/11.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/11.png?raw=true)
 
 spring.factories 文件中有关自动配置的配置信息如下：
 
@@ -577,7 +577,7 @@ public class ServerProperties {
 
 prefix = "server" 表示SpringBoot配置文件中的前缀，SpringBoot会将配置文件中以server开始的属性映射到该类的字段中。映射关系如下：
 
-![](../../image/12.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/12.png?raw=true)
 
 # 四、SpringBoot的配置文件
 
@@ -808,7 +808,7 @@ public class QuickStartController {
 
 浏览器访问地址：http://localhost:8080/quick 结果如下：
 
-![](../../image/13.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/13.png?raw=true)
 
 
 
@@ -860,7 +860,7 @@ public class QuickStartController {
 
 浏览器访问地址：http://localhost:8080/quick 结果如下：
 
-![](../../image/13.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/14.png?raw=true)
 
 注意：使用@ConfigurationProperties方式可以进行配置文件与实体字段的自动映射，但需要字段必须提供set方法才可以，而使用@Value注解修饰的字段不需要提供set方法
 
@@ -1001,7 +1001,7 @@ public class MapperController {
 
 ### 5.1.10 测试
 
-![](../../image/14.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/13.png?raw=trueg)
 
 ## 5.2 SpringBoot整合Junit
 
@@ -1062,7 +1062,7 @@ public final class SpringRunner extends SpringJUnit4ClassRunner
 
 ### 5.2.3 控制台打印信息
 
-![](../../image/15.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/15.png?raw=true)
 
 
 
@@ -1154,11 +1154,11 @@ public class JpaTest {
 
 ### 5.3.7 控制台打印信息
 
-![](../../image/16.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/16.png?raw=true)
 
 注意：如果是jdk9，执行报错如下：
 
-![](../../image/17.png)
+![](https://github.com/AndyYoungCN/springnotes/blob/master/image/17.png?raw=true)
 
 原因：jdk缺少相应的jar
 
