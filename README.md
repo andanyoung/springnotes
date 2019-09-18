@@ -30,5 +30,5 @@
   - [Mybatis 日志输出](/notes/MyBatis/Mybatis日志输出.md)
   - [MyBatis 开启事务](/notes/MyBatis/MyBatis开启事务.md)
   - [Mybatis进阶之Mybatis-PageHelper](/notes/MyBatis/SpringBoot进阶之Mybatis-PageHelper.md)
-  - [Mybatis Plus]
+  - [Mybatis Plus](https://mybatis.plus/guide/)
   - [Mybatis 主从]
