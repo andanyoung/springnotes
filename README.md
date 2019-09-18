@@ -35,3 +35,11 @@
 ### 源码分析
 - [1.spring-boot-starter-data-redis.md](/notes/source/1.spring-boot-starter-data-redis.md)
 - [2.commons-pool2](/notes/source/2.commons-pool2.md)
+### 设计模式
+- [工厂模式](https://www.runoob.com/design-pattern/factory-pattern.html)
+> 在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。
+>
+>使用场景： 1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。 2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。 3、设计一个连接服务器的框架，需要三个协议，"POP3"、"IMAP"、"HTTP"，可以把这三个作为产品类，共同实现一个接口。
+> 工厂方法通过传入不同参数创建对象（返回同个父类、协议），调用该对象（父类、协议）的方法实现。目的根据不同参数，创建不同对象。调用同一方法名实现不同效果、功能。
+- [建造者模式(Builder)](https://www.runoob.com/design-pattern/builder-pattern.html)
+- [更多设计模式](https://www.runoob.com/design-pattern/design-pattern-tutorial.html)
