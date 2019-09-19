@@ -863,8 +863,20 @@ public class QuickStartController {
 ![](https://github.com/AndyYoungCN/springnotes/blob/master/image/14.png?raw=true)
 
 注意：使用@ConfigurationProperties方式可以进行配置文件与实体字段的自动映射，但需要字段必须提供set方法才可以，而使用@Value注解修饰的字段不需要提供set方法
-
-
+## 4.3 多个环境配置文件
+在现实的开发环境中，我们需要不同的配置环境；格式为application-{profile}.properties，其中{profile}对应你的环境标识，比如：
+- application-test.properties：测试环境
+- application-dev.properties：开发环境
+- application-prod.properties：生产环境
+怎么使用？只需要我们在application.properties中加：
+```
+spring.profiles.active=test
+```
+其中application-dev.properties:
+```
+server.port=8081
+```
+> 启动工程，发现程序的端口不再是8080,而是8082。
 
 # 五、SpringBoot与整合其他技术
 
@@ -1232,4 +1244,4 @@ public class RedisTest {
 
 }
 ```
-
+源码下载：[https://github.com/AndyYoungCN/springnotes/tree/master/source/springboot](https://github.com/AndyYoungCN/springnotes/tree/master/source/springboot)

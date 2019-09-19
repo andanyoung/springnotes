@@ -82,7 +82,7 @@ public class IUserTest {
 }
 ```
 ## 运行结果
-···
+```
 2019-09-03 16:26:18.690 DEBUG 7308 --- [           main] c.a.m.p.dao.IUser.findUsers_COUNT        : ==>  Preparing: SELECT count(0) FROM User 
 2019-09-03 16:26:18.727 DEBUG 7308 --- [           main] c.a.m.p.dao.IUser.findUsers_COUNT        : ==> Parameters: 
 2019-09-03 16:26:18.758 DEBUG 7308 --- [           main] c.a.m.p.dao.IUser.findUsers_COUNT        : <==      Total: 1
@@ -115,6 +115,6 @@ User{id=15, username='add user', birthday=Tue Aug 27 05:41:20 CST 2019, sex='n',
 User{id=16, username='zhangsan', birthday=null, sex='null', address='new address'}
 User{id=17, username='add user1567497890843', birthday=Tue Sep 03 08:04:51 CST 2019, sex='n', address='nb'}
 User{id=18, username='add user1567497903111', birthday=Tue Sep 03 08:05:03 CST 2019, sex='n', address='nb'}
-···
+```
 [demo获取](https://github.com/AndyYoungCN/springnotes/tree/master/source/pagehelper)
 [官网github](https://github.com/pagehelper/Mybatis-PageHelper)

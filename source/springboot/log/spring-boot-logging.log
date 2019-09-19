@@ -1,225 +1,210 @@
-17:16:29.485 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 12004 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:16:29.489 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:16:31.704 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:16:31.711 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:16:32.104 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 381ms. Found 1 repository interfaces.
-17:16:32.142 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:16:32.145 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:16:32.175 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
-17:16:32.176 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
-17:16:32.831 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$32ca0683] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-17:16:33.419 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+14:54:23.340 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 18112 (started by admin in D:\java\notes\springnotes\source\springboot)
+14:54:23.346 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+14:54:23.348 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
+14:54:25.328 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:54:25.331 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:54:25.564 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 217ms. Found 1 repository interfaces.
+14:54:25.592 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:54:25.594 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:54:25.623 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
+14:54:25.624 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+14:54:26.211 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$83d6c7e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:54:26.983 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-17:16:33.538 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-17:16:33.540 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-17:16:33.828 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-17:16:34.172 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:16:34.177 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-17:16:34.715 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:16:34.751 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-17:16:36.086 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:16:36.214 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-17:16:36.267 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
-17:16:36.269 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
-17:16:36.269 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
-17:16:38.371 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-17:16:38.459 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:16:39.752 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 11.983 seconds (JVM running for 13.742)
-17:16:40.020 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-17:16:40.021 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:16:40.071 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:16:40.080 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-17:18:28.512 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 10220 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:18:28.512 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 10220 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:18:28.513 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:18:28.513 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:18:28.514 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:18:28.514 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:18:29.708 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:18:29.711 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:18:29.961 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 235ms. Found 1 repository interfaces.
-17:18:29.982 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:18:29.984 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:18:30.006 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
-17:18:30.006 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8ms. Found 0 repository interfaces.
-17:18:30.615 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0100269] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-17:18:31.219 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+14:54:27.097 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+14:54:27.099 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:54:27.350 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+14:54:27.757 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:54:27.762 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+14:54:28.666 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:54:28.739 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:54:30.333 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:54:30.443 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+14:54:30.495 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+14:54:30.497 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
+14:54:30.497 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
+14:54:32.284 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14:54:32.649 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:54:34.019 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 11.533 seconds (JVM running for 14.582)
+14:54:34.207 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
+14:54:34.269 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
+14:54:34.530 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+14:54:34.531 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:54:34.544 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:54:34.605 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:57:16.777 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 17252 (started by admin in D:\java\notes\springnotes\source\springboot)
+14:57:16.779 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+14:57:16.780 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
+14:57:18.996 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:57:19.000 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:57:19.308 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 290ms. Found 1 repository interfaces.
+14:57:19.339 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:57:19.341 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:57:19.376 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
+14:57:19.377 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+14:57:20.554 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0100269] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:57:21.168 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-17:18:31.301 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-17:18:31.303 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-17:18:31.476 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-17:18:31.780 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:18:31.784 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-17:18:32.324 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:18:32.359 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-17:18:33.466 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:18:33.529 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-17:18:33.597 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
-17:18:33.600 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
-17:18:33.600 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
-17:18:35.447 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-17:18:35.539 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:18:36.630 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 8.986 seconds (JVM running for 10.531)
-17:18:36.630 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 8.986 seconds (JVM running for 10.531)
-17:18:36.750 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:18:36.750 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:18:36.766 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:18:36.766 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:18:36.797 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:18:36.797 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:18:36.846 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-17:18:36.847 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:18:36.858 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:18:36.875 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-17:19:26.047 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 11536 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:19:26.047 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 11536 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:19:26.048 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:19:26.048 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:19:26.050 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:19:26.050 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:19:27.476 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:19:27.479 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:19:27.665 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 170ms. Found 1 repository interfaces.
-17:19:27.690 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:19:27.692 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:19:27.715 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
-17:19:27.715 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
-17:19:28.280 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0100269] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-17:19:28.828 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+14:57:21.243 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+14:57:21.245 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:57:21.507 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+14:57:21.862 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:57:21.865 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+14:57:22.843 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:57:22.864 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:57:23.983 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:57:24.048 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+14:57:24.096 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+14:57:24.097 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
+14:57:24.098 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
+14:57:26.120 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14:57:26.230 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:57:27.450 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 11.697 seconds (JVM running for 13.5)
+14:57:27.596 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
+14:57:27.663 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
+14:57:27.804 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 28
+14:57:27.991 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+14:57:27.992 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:57:28.041 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:57:28.806 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:57:55.678 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - Starting MySpringBootApplication on chenshijiang with PID 15308 (D:\java\notes\springnotes\source\springboot\target\classes started by admin in D:\java\notes\springnotes\source\springboot)
+14:57:55.685 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - The following profiles are active: dev
+14:57:55.777 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:57:55.777 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:57:58.152 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:57:58.155 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:57:58.309 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144ms. Found 1 repository interfaces.
+14:57:58.346 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:57:58.348 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:57:58.367 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
+14:57:58.367 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+14:57:59.047 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8a3db207] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:58:00.111 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+14:58:00.157 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+14:58:00.231 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:58:00.231 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+14:58:00.322 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.18] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+14:58:00.322 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.18] using APR version [1.6.5].
+14:58:00.322 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+14:58:00.322 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+14:58:00.382 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1  11 Sep 2018]
+14:58:00.737 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:58:00.737 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4960 ms
+14:58:01.125 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-17:19:28.903 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-17:19:28.905 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-17:19:29.105 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-17:19:29.378 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:19:29.383 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-17:19:29.975 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:19:30.002 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-17:19:31.262 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:19:31.310 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-17:19:31.366 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
-17:19:31.369 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
-17:19:31.369 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
-17:19:32.991 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-17:19:33.078 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:19:34.374 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 9.521 seconds (JVM running for 11.047)
-17:19:34.374 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 9.521 seconds (JVM running for 11.047)
-17:19:34.494 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:19:34.494 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:19:34.510 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:19:34.510 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:19:34.542 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:19:34.542 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:19:34.582 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-17:19:34.585 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:19:34.592 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:19:34.610 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-17:22:02.044 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 10808 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:22:02.044 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 10808 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:22:02.046 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:22:02.046 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:22:02.050 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:22:02.050 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:22:03.627 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:22:03.630 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:22:04.002 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 352ms. Found 1 repository interfaces.
-17:22:04.028 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:22:04.030 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:22:04.052 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
-17:22:04.052 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
-17:22:04.775 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b0100269] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-17:22:05.651 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+14:58:01.218 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+14:58:01.220 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:58:01.503 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+14:58:01.756 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:58:01.761 [restartedMain] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+14:58:02.416 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:58:02.441 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:58:03.384 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:58:03.402 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:58:03.453 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+14:58:03.511 [restartedMain] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+14:58:03.514 [restartedMain] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
+14:58:03.515 [restartedMain] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
+14:58:04.478 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14:58:04.558 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:58:05.369 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+14:58:05.419 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+14:58:05.422 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - Started MySpringBootApplication in 10.518 seconds (JVM running for 11.63)
+14:58:40.359 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:58:40.359 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:58:40.379 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 20 ms
+14:59:23.063 [http-nio-8081-exec-4] INFO  cn.andyoung.MySpringBootApplication - test logging...
+14:59:40.913 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - Starting MySpringBootApplication on chenshijiang with PID 10836 (D:\java\notes\springnotes\source\springboot\target\classes started by admin in D:\java\notes\springnotes\source\springboot)
+14:59:40.918 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - The following profiles are active: prod
+14:59:41.032 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:59:41.033 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:59:43.194 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:59:43.197 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:59:43.535 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 322ms. Found 1 repository interfaces.
+14:59:43.562 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+14:59:43.564 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+14:59:43.586 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
+14:59:43.586 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7ms. Found 0 repository interfaces.
+14:59:44.376 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb3e62c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+14:59:45.526 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8082 (http)
+14:59:45.562 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+14:59:45.580 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:59:45.581 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+14:59:45.600 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.18] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+14:59:45.601 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.18] using APR version [1.6.5].
+14:59:45.602 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+14:59:45.603 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+14:59:45.611 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1  11 Sep 2018]
+14:59:45.964 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:59:45.965 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4932 ms
+14:59:46.357 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-17:22:05.787 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-17:22:05.788 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-17:22:05.968 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-17:22:06.248 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:22:06.253 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-17:22:06.776 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:22:06.807 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-17:22:07.744 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:22:09.403 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-17:22:09.494 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:22:10.622 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 9.444 seconds (JVM running for 10.777)
-17:22:10.622 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 9.444 seconds (JVM running for 10.777)
-17:22:10.730 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:22:10.730 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:22:10.746 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:22:10.746 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:22:10.773 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:22:10.773 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:22:10.805 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-17:22:10.806 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:22:10.818 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:22:10.838 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-17:23:02.972 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 11920 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:23:02.974 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:23:02.975 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:23:04.790 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:23:04.793 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:23:05.275 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 467ms. Found 1 repository interfaces.
-17:23:05.319 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:23:05.322 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:23:05.362 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
-17:23:05.362 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26ms. Found 0 repository interfaces.
-17:23:06.163 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c3fad364] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-17:23:07.006 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+14:59:46.462 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
+14:59:46.464 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+14:59:46.753 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+14:59:46.921 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:59:46.924 [restartedMain] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+14:59:47.412 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:59:47.431 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+14:59:48.349 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:59:48.379 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:59:48.419 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+14:59:48.488 [restartedMain] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+14:59:48.491 [restartedMain] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
+14:59:48.491 [restartedMain] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
+14:59:49.427 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+14:59:49.494 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:59:50.280 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+14:59:50.309 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8082 (http) with context path ''
+14:59:50.312 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - Started MySpringBootApplication in 11.078 seconds (JVM running for 12.051)
+15:00:21.995 [http-nio-8082-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:00:21.995 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+15:00:22.006 [http-nio-8082-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+15:00:22.032 [http-nio-8082-exec-1] INFO  cn.andyoung.MySpringBootApplication - test logging...
+15:00:34.233 [http-nio-8082-exec-4] INFO  cn.andyoung.MySpringBootApplication - test logging...
+15:00:37.311 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+15:00:37.313 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+15:00:37.318 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:00:37.333 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:00:37.754 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - Starting MySpringBootApplication on chenshijiang with PID 10836 (D:\java\notes\springnotes\source\springboot\target\classes started by admin in D:\java\notes\springnotes\source\springboot)
+15:00:37.755 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - The following profiles are active: test
+15:00:38.319 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:00:38.319 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+15:00:38.343 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24ms. Found 1 repository interfaces.
+15:00:38.348 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:00:38.349 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+15:00:38.354 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
+15:00:38.355 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6ms. Found 0 repository interfaces.
+15:00:38.499 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cb3e62c4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:00:38.698 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8083 (http)
+15:00:38.699 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+15:00:38.699 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:00:38.703 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+15:00:38.703 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - An older version [1.2.18] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+15:00:38.703 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.18] using APR version [1.6.5].
+15:00:38.704 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+15:00:38.704 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+15:00:38.705 [restartedMain] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1  11 Sep 2018]
+15:00:38.757 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:00:38.758 [restartedMain] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1000 ms
+15:00:38.873 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-17:23:07.108 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-17:23:07.110 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-17:23:07.305 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-17:23:07.666 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:23:07.670 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-17:23:08.369 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:23:08.405 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-17:23:09.329 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:23:11.101 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-17:23:11.176 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:23:12.245 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 10.238 seconds (JVM running for 11.507)
-17:23:12.364 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:23:12.380 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:23:12.403 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:23:12.429 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-17:23:12.430 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:23:12.436 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:23:12.463 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-17:26:59.868 [main] INFO  cn.andyoung.mapper.UserMapperTest - Starting UserMapperTest on chenshijiang with PID 10172 (started by admin in D:\java\notes\springnotes\source\springboot)
-17:26:59.869 [main] DEBUG cn.andyoung.mapper.UserMapperTest - Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
-17:26:59.870 [main] INFO  cn.andyoung.mapper.UserMapperTest - No active profile set, falling back to default profiles: default
-17:27:01.216 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:27:01.219 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:27:01.412 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 179ms. Found 1 repository interfaces.
-17:27:01.427 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
-17:27:01.428 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
-17:27:01.448 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface cn.andyoung.repository.UserRepository.
-17:27:01.448 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
-17:27:01.980 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$73471925] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-17:27:02.531 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
-	name: default
-	...]
-17:27:02.624 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.10.Final}
-17:27:02.626 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
-17:27:02.803 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-17:27:03.088 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-17:27:03.094 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-17:27:03.600 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-17:27:03.630 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-17:27:04.734 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-17:27:04.822 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-17:27:04.873 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
-17:27:04.875 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
-17:27:04.875 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
-17:27:06.452 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-17:27:06.550 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-17:27:07.629 [main] INFO  cn.andyoung.mapper.UserMapperTest - Started UserMapperTest in 8.639 seconds (JVM running for 10.131)
-17:27:07.746 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==>  Preparing: select * from user 
-17:27:07.764 [main] DEBUG c.a.mapper.UserMapper.queryUserList - ==> Parameters: 
-17:27:07.791 [main] DEBUG c.a.mapper.UserMapper.queryUserList - <==      Total: 8
-17:27:07.828 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-17:27:07.829 [Thread-3] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-17:27:07.835 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:27:07.847 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:00:38.895 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+15:00:38.895 [restartedMain] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+15:00:38.926 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+15:00:38.926 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+15:00:38.988 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:00:38.997 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:00:39.016 [restartedMain] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.JPAUser matches criteria [is assignable to Object]
+15:00:39.017 [restartedMain] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class cn.andyoung.domain.User matches criteria [is assignable to Object]
+15:00:39.182 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+15:00:39.188 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:00:39.378 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+15:00:39.383 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8083 (http) with context path ''
+15:00:39.390 [restartedMain] INFO  cn.andyoung.MySpringBootApplication - Started MySpringBootApplication in 1.7 seconds (JVM running for 61.128)
+15:00:39.402 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
