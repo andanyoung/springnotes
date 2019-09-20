@@ -219,4 +219,73 @@ public class UserController {
 启动工程，访问：http://localhost:8080/swagger-ui.html ，就看到swagger-ui:
 ![运行结果](../../image/07B04878-22B4-4d93-AF08-781A0BF39237.png)
 
-整个集成过程非常简单，但是我看了相关的资料，swagger没有做安全方面的防护，可能需要我们自己做相关的工作。
+## 5. swager2 安全
+> 整个集成过程非常简单，但是我看了相关的资料，swagger没有做安全方面的防护，需要我们自己做相关的工作。
+### 5.1 直接使用多环境配置，生产环境不启用Swagger2
+#### 5.1.1 添加配置文件
+application.properties 文件
+`spring.profiles.active=prod`
+application-pro.properties 文件
+```
+#生产环境
+server.port=8088
+swagger2.enable=false
+```
+#### 5.1.1 Swagger2配置类修改
+添加依赖注入
+```
+@Value("${swagger2.enable}")
+private boolean swagger2Enable;
+```
+配置swagger开关
+```
+  @Bean
+  public Docket createRestApi() {
+    return new Docket(DocumentationType.SWAGGER_2)
+        .enable(swagger2Enable)
+        .apiInfo(apiInfo())
+        .select()
+        .apis(RequestHandlerSelectors.basePackage("cn.andyoung.swagger2.controller"))
+        .paths(PathSelectors.any())
+        .build();
+  }
+```
+这样访问正式：http://localhost:8088/swagger-ui.html 就访问不了了。显示结果:
+![](../../image/DD24E068-7A90-4da3-954E-741CE5122BB0.png)
+#### 5.1.2 使用springboot security过滤
+//略
+## 6.高级配置
+应用程序的Docket bean可以配置为让您更多地控制API文档生成过程。
+### 6.1 过滤Swagger响应的API
+公开整个API的文档并不总是可取的。您可以通过将参数传递给Docket类的apis（）和paths（）方法来限制Swagger的响应  。
+如上所示，RequestHandlerSelectors允许使用  any或none谓词，但也可用于根据基本包，类注释和方法注释过滤API。
+PathSelectors提供了额外的过滤功能，并使用谓词来扫描应用程序的请求路径。你可以使用  any（），none（），  regex（）或  ant（）。
+在下面的示例中，我们将指示Swagger使用ant（）  谓词仅包含特定包中的控制器，并使用特定的路径。
+```
+@Bean
+public Docket api() {                
+    return new Docket(DocumentationType.SWAGGER_2)          
+      .select()                                       
+      .apis(RequestHandlerSelectors.basePackage("org.baeldung.web.controller"))
+      .paths(PathSelectors.ant("/foos/*"))                     
+      .build();
+}
+```
+> ps 这里可以更加环境区分对需要开发哪些端口
+### 6.3 自定义方法响应消息
+Swagger允许通过  Docket的  `globalResponseMessage（）`方法全局覆盖HTTP方法的响应消息。首先，您必须指示Swagger不要使用默认响应消息。 
+假设您希望覆盖  所有GET方法的500和403响应消息。为了达到这个目的，一些代码必须被添加到Docket的初始化块（为了清楚起见，原始冗余代码被排除）：
+```
+.useDefaultResponseMessages(false)                                   
+.globalResponseMessage(RequestMethod.GET,                     
+  newArrayList(new ResponseMessageBuilder()   
+    .code(500)
+    .message("500 message")
+    .responseModel(new ModelRef("Error"))
+    .build(),
+    new ResponseMessageBuilder() 
+      .code(403)
+      .message("Forbidden!")
+      .build()));
+```
+![](../../image/B195C092-A101-4196-A820-E7163B311850.png)
