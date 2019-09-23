@@ -53,7 +53,7 @@ public class ScheduledTasks {
 - 1.在程序的入口加上@EnableScheduling注解。
 - 2.在定时方法上加@Scheduled注解。
 源码下载：
-[https://github.com/AndyYoungCN/springnotes/tree/master/source/mybatis](https://github.com/AndyYoungCN/springnotes/tree/master/source/mybatis)
+[https://github.com/AndyYoungCN/springnotes/tree/master/source/mybatis](https://github.com/AndyYoungCN/springnotes/tree/master/source/schedulingtask)
 ## 动态配置定时任务
 Spring提供了SchedulingConfigurer接口，下面介绍可配置、动态修改触发器的定时任务
 可配置的定时任务组件需要实现SchedulingConfigurer接口中的configureTasks方法，该方法有两个入参（Runnable task, Trigger trigger），第一个为我们任务的具体逻辑实现，第二个为触发器，动态的定时任务则意味着Trigger需要动态获取，由于之前我们已经集成redis，因此这里我们从redis获取相关配置。
