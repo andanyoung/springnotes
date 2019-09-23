@@ -20,6 +20,7 @@
   - [日志管理LogBack](/notes/springboot/SpringBoot的日志详解.md)
   - [SpringBoot之Druid](/notes/springboot/SpringBoot之Druid.md)
   - [swagger2教程](/notes/springboot/swagger2教程.md)
+  - [定时任务（Scheduling Tasks）](/notes/springboot/定时任务（Scheduling Tasks）.md)
 ### 第三方框架
 - MyBatis
   - [MyBatis入门](/notes/MyBatis/MyBatis入门.md)
