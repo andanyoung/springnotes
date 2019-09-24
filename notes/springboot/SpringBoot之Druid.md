@@ -2,7 +2,7 @@
 ## druid 介绍
 Druid是Java语言中最好的数据库连接池。Druid能够提供强大的监控和扩展功能。DruidDataSource支持的数据库：
 理论上说，支持所有有jdbc驱动的数据库。最近发现Druid在springboot框架下有更加好用的Druid Spring Boot Starter，可以省去原本写Druid的一些配置文件或者@Configuration来配置，直接将配置写在application.yml/application.properties里，看起来更简单一些。
-[demo获取,欢迎start](https://github.com/AndyYoungCN/springnotes/tree/master/source/druid4mybatis)
+[demo获取,欢迎start](https://github.com/AndyYoungCN/springbootexample/tree/master/source/druid4mybatis)
 ## 快速开始
 ### 使用`@Configuration`
 > 该方法配置起来较麻烦不做介绍参考[alibaba/druid](https://github.com/alibaba/druid/wiki/%E9%A6%96%E9%A1%B5)
@@ -302,7 +302,7 @@ public DataSource dataSourceTwo(){
 }
 ```
 
-[demo获取](https://github.com/AndyYoungCN/springnotes/tree/master/source/druid4mybatis)
+[demo获取](https://github.com/AndyYoungCN/springbootexample/tree/master/source/druid4mybatis)
 
 ## 使用Class配置不适用autoconfig
 ```

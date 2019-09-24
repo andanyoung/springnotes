@@ -116,5 +116,5 @@ User{id=16, username='zhangsan', birthday=null, sex='null', address='new address
 User{id=17, username='add user1567497890843', birthday=Tue Sep 03 08:04:51 CST 2019, sex='n', address='nb'}
 User{id=18, username='add user1567497903111', birthday=Tue Sep 03 08:05:03 CST 2019, sex='n', address='nb'}
 ```
-[demo获取](https://github.com/AndyYoungCN/springnotes/tree/master/source/pagehelper)
+[demo获取](https://github.com/AndyYoungCN/springbootexample/tree/master/source/pagehelper)
 [官网github](https://github.com/pagehelper/Mybatis-PageHelper)

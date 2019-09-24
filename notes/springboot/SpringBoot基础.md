@@ -1244,4 +1244,4 @@ public class RedisTest {
 
 }
 ```
-源码下载：[https://github.com/AndyYoungCN/springnotes/tree/master/source/springboot](https://github.com/AndyYoungCN/springnotes/tree/master/source/springboot)
+源码下载：[https://github.com/AndyYoungCN/springbootexample/tree/master/source/springboot](https://github.com/AndyYoungCN/springbootexample/tree/master/source/springboot)

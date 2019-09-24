@@ -83,4 +83,4 @@ public class AccountService {
 结语
 springboot 开启事物很简单，只需要加一行注解就可以了，前提你用的是jdbctemplate, jpa, mybatis，这种常见的orm。
 
-源码下载：https://github.com/AndyYoungCN/springnotes/tree/master/source/transactional
+源码下载：https://github.com/AndyYoungCN/springbootexample/tree/master/source/transactional

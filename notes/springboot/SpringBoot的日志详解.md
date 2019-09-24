@@ -202,4 +202,4 @@ ThresholdFilter为系统定义的拦截器，例如我们用ThresholdFilter来�
 其中重要的是rollingPolicy的定义，上例中`<fileNamePattern>`logback.%d{yyyy-MM-dd}.log`</fileNamePattern>`定义了日志的切分方式——把每一天的日志归档到一个文件中，`<maxHistory>`30`</maxHistory>`表示只保留最近30天的日志，以防止日志填满整个磁盘空间。同理，可以使用%d{yyyy-MM-dd_HH-mm}来定义精确到分的日志切分方式。`<totalSizeCap>`1GB`</totalSizeCap`>用来指定日志文件的上限大小，例如设置为1GB的话，那么到了这个值，就会删除旧的日志
 > 说明：当天的日志会记录在`spring-boot-logging.log`文件里。昨天的日志会被转移到`<fileNamePattern>`logback.%d{yyyy-MM-dd}.log`</fileNamePattern>`文件
 
-[demo获取,欢迎start](https://github.com/AndyYoungCN/springnotes/tree/master/source/SpringBoot的日志详解.md)
+[demo获取,欢迎start](https://github.com/AndyYoungCN/springbootexample/tree/master/source/SpringBoot的日志详解.md)
