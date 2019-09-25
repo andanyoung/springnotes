@@ -34,8 +34,10 @@
   - [Mybatis进阶之Mybatis-PageHelper](/notes/MyBatis/SpringBoot进阶之Mybatis-PageHelper.md)
   - [Mybatis Plus](https://mybatis.plus/guide/)
   - [Mybatis 主从]
+- Thymeleaf
+  - [1.Thymeleaf模板引擎简介与入门](/notes/Thymeleaf/1.Thymeleaf模板引擎简介与入门.md)
 ### 源码分析
-- [1.spring-boot-starter-data-redis.md](/notes/source/1.spring-boot-starter-data-redis.md)
+- [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
 - [2.commons-pool2](/notes/source/2.commons-pool2.md)
 ### 设计模式
 - [工厂模式](https://www.runoob.com/design-pattern/factory-pattern.html)
