@@ -36,6 +36,8 @@
   - [Mybatis 主从]
 - Thymeleaf
   - [1.Thymeleaf模板引擎简介与入门](/notes/Thymeleaf/1.Thymeleaf模板引擎简介与入门.md)
+  - [2.Thymeleaf 标准表达式语法详解](/notes/Thymeleaf/2.Thymeleaf标准表达式语法详解.md)
+  - [3.Thymeleaf th:* 设置/修改属性值详解](/notes/Thymeleaf/3.th详解.md)
 ### 源码分析
 - [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
 - [2.commons-pool2](/notes/source/2.commons-pool2.md)
