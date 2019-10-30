@@ -134,4 +134,5 @@ public class GithubRepoPageProcessor implements PageProcessor {
     }
 }
 ```
-[详细教程](http://webmagic.io/docs/zh/)
+[详细教程](http://webmagic.io/docs/zh/)  
+[使用Selenium来抓取动态加载的页面](https://my.oschina.net/flashsword/blog/147334)
