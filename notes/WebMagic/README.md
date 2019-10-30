@@ -1,4 +1,5 @@
 # WebMagic
+![](http://webmagic.io/images/logo.jpeg)
 ## 1.WebMagic概览
 WebMagic项目代码分为核心和扩展两部分。核心部分(webmagic-core)是一个精简的、模块化的爬虫实现，而扩展部分则包括一些便利的、实用性的功能。WebMagic的架构设计参照了Scrapy，目标是尽量的模块化，并体现爬虫的功能特点。
 
