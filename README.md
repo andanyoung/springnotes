@@ -45,6 +45,9 @@
   - [8.Thymeleaf 基本对象表达式](/notes/Thymeleaf/8.Thymeleaf.md)
   - [9.Thymeleaf 工具类对象表达式](/notes/Thymeleaf/9.Thymeleaf.md)
   - [10.Thymeleaf 标记选择器语法](/notes/Thymeleaf/10.Thymeleaf.md)
+### Spring Security
+  - [Spring Security 详细简绍与入门](/notes/Spring%20Security/README.md)
+  - [Spring Security 用户注销 与 Thymeleaf 权限控制](/notes/Spring%20Security/1.用户注销与Thymeleaf-权限控制.md)
 ### 源码分析
 - [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
 - [2.commons-pool2](/notes/source/2.commons-pool2.md)
