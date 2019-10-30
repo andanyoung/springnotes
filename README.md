@@ -48,6 +48,7 @@
 ### Spring Security
   - [Spring Security 详细简绍与入门](/notes/Spring%20Security/README.md)
   - [Spring Security 用户注销 与 Thymeleaf 权限控制](/notes/Spring%20Security/1.用户注销与Thymeleaf-权限控制.md)
+### [WebMagic](./notes/WebMagic/README.md)
 ### 源码分析
 - [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
 - [2.commons-pool2](/notes/source/2.commons-pool2.md)
