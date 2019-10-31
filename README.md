@@ -1,6 +1,7 @@
 # spring笔记
 > 本仓库是对spirng学习的笔记，欢迎大家指点，持续更新中
 ## 目录
+- [java 基础](/notes/java/关于JVMJDK和JRE最详细通俗的解答.md)
 - spring
   - [基础](/notes/spring/spring.md)
   - [基于注解的spring](/notes/spring/springIOC注解.md)
