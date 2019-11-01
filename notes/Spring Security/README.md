@@ -149,10 +149,30 @@ spring.security.user.password=123456
 4、再次启动应用进行访问：
 
 5、此时必须使用配置好的账号与密码登录。
+## 基于表单的认证
+-- 简单的配置
+```
+@Override
+protected void configure(HttpSecurity http) throws Exception {
+    // http.formLogin() // 表单方式
+    http.httpBasic() // HTTP Basic方式
+            .and()
+            .authorizeRequests() // 授权配置
+            .anyRequest()  // 所有请求
+            .authenticated(); // 都需要认证
+}
+```
+![](../../image/A9718756-A39A-4389-BE70-9C185A670764.png)
+## 基本原理
+上面我们开启了一个最简单的Spring Security安全配置，下面我们来了解下Spring Security的基本原理。通过上面的的配置，代码的执行过程可以简化为下图表示：
+![](../../image/QQ截图20180707111356.png)
+如上图所示，Spring Security包含了众多的过滤器，这些过滤器形成了一条链，所有请求都必须通过这些过滤器后才能成功访问到资源。其中UsernamePasswordAuthenticationFilter过滤器用于处理基于表单方式的登录认证，而BasicAuthenticationFilter用于处理基于HTTP Basic方式的登录验证，后面还可能包含一系列别的过滤器（可以通过相应配置开启）。在过滤器链的末尾是一个名为FilterSecurityInterceptor的拦截器，用于判断当前请求身份认证是否成功，是否有相应的权限，当身份认证失败或者权限不足的时候便会抛出相应的异常。ExceptionTranslateFilter捕获并处理，所以我们在ExceptionTranslateFilter过滤器用于处理了FilterSecurityInterceptor抛出的异常并进行处理，比如需要身份认证时将请求重定向到相应的认证页面，当认证失败或者权限不足时返回相应的提示信息。
+
 
 ## 内存用户认证与授权
 ### UserControler 控制层访问
 - 1、实际中不可能直接访问 .html 文件，而是通过后台控制器处理后进行跳转或者返回，这里新建一个 UserControler，提供增删改查的四个方法来从浏览器访问。方法中只做简单模拟，并不操作数据库。
+
 ```
 package cn.andyoung.springsecurity.controller;
 
