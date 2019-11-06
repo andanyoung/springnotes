@@ -1,44 +1,49 @@
-# spring笔记
-> 本仓库是对spirng学习的笔记，欢迎大家指点，持续更新中
+# spring 笔记
+
+> 本仓库是对 spirng 学习的笔记，欢迎大家指点，持续更新中
+
 ## 目录
+
 - [java 基础](/notes/java/关于JVMJDK和JRE最详细通俗的解答.md)
 - spring
   - [基础](/notes/spring/spring.md)
-  - [基于注解的spring](/notes/spring/springIOC注解.md)
-  - [Spring整合Junit](/notes/spring/Spring整合Junit.md)
+  - [基于注解的 spring](/notes/spring/springIOC注解.md)
+  - [Spring 整合 Junit](/notes/spring/Spring整合Junit.md)
   - [SpringAOP](/notes/spring/SpringAOP.md)
-  - [SpringAOP注解](/notes/spring/SpringAOP注解.md)
+  - [SpringAOP 注解](/notes/spring/SpringAOP注解.md)
 - spring mvc
   - [基本概念](/notes/springmvc/基本概念.md)
   - [spring mvc](/notes/springmvc/springmvc.md)
   - [SpringMVC 注解](/notes/springmvc/SpringMVC注解.md)
-  - [SpringMVC异常处理](/notes/springmvc/SpringMVC异常处理.md)
-  - [SpringMVC拦截器](/notes/springmvc/SpringMVC拦截器.md)
+  - [SpringMVC 异常处理](/notes/springmvc/SpringMVC异常处理.md)
+  - [SpringMVC 拦截器](/notes/springmvc/SpringMVC拦截器.md)
 - springboot
   - [基础](/notes/springboot/SpringBoot基础.md)
-  - [Spring常用注解](/notes/springboot/Spring常用注解.md)
+  - [Spring 常用注解](/notes/springboot/Spring常用注解.md)
   - [Redis](/notes/springboot/Redis.md)
-  - [日志管理LogBack](/notes/springboot/SpringBoot的日志详解.md)
-  - [SpringBoot之Druid](/notes/springboot/SpringBoot之Druid.md)
-  - [swagger2教程](/notes/springboot/swagger2教程.md)
+  - [日志管理 LogBack](/notes/springboot/SpringBoot的日志详解.md)
+  - [SpringBoot 之 Druid](/notes/springboot/SpringBoot之Druid.md)
+  - [swagger2 教程](/notes/springboot/swagger2教程.md)
   - [定时任务（Scheduling Tasks）](/notes/springboot/定时任务.md)
+
 ### 第三方框架
+
 - MyBatis
-  - [MyBatis入门](/notes/MyBatis/MyBatis入门.md)
-  - [MyBatis参数配置](/notes/MyBatis/MyBatis参数配置.md)
-  - [Mybatis的动态 SQL 语句](/notes/MyBatis/Mybatis的动态SQL语句.md)
-  - [Mybatis多表查询](/notes/MyBatis/Mybatis多表查询.md)
-  - [Mybatis延迟加载缓存策略](/notes/MyBatis/Mybatis延迟加载策略.md)
+  - [MyBatis 入门](/notes/MyBatis/MyBatis入门.md)
+  - [MyBatis 参数配置](/notes/MyBatis/MyBatis参数配置.md)
+  - [Mybatis 的动态 SQL 语句](/notes/MyBatis/Mybatis的动态SQL语句.md)
+  - [Mybatis 多表查询](/notes/MyBatis/Mybatis多表查询.md)
+  - [Mybatis 延迟加载缓存策略](/notes/MyBatis/Mybatis延迟加载策略.md)
   - [Mybatis 注解开发](/notes/MyBatis/Mybatis注解开发.md)
   - [Mybatis 日志输出](/notes/MyBatis/Mybatis日志输出.md)
   - [MyBatis 开启事务](/notes/MyBatis/MyBatis开启事务.md)
-  - [Mybatis进阶之Mybatis-PageHelper](/notes/MyBatis/SpringBoot进阶之Mybatis-PageHelper.md)
+  - [Mybatis 进阶之 Mybatis-PageHelper](/notes/MyBatis/SpringBoot进阶之Mybatis-PageHelper.md)
   - [Mybatis Plus](https://mybatis.plus/guide/)
   - [Mybatis 主从]
 - Thymeleaf
-  - [1.Thymeleaf模板引擎简介与入门](/notes/Thymeleaf/1.Thymeleaf模板引擎简介与入门.md)
+  - [1.Thymeleaf 模板引擎简介与入门](/notes/Thymeleaf/1.Thymeleaf模板引擎简介与入门.md)
   - [2.Thymeleaf 标准表达式语法详解](/notes/Thymeleaf/2.Thymeleaf标准表达式语法详解.md)
-  - [3.Thymeleaf th:* 设置/修改属性值详解](/notes/Thymeleaf/3.th详解.md)
+  - [3.Thymeleaf th:\* 设置/修改属性值详解](/notes/Thymeleaf/3.th详解.md)
   - [4.Thymeleaf th:fragment、th:replace、th:insert、th:remove](/notes/Thymeleaf/4.Thymeleaf.md)
   - [5.Thymeleaf th:fragment、th:replace、th:insert、th:remove](/notes/Thymeleaf/5.Thymeleaf.md)
   - [6.Thymeleaf th:with 局部变量 与 属性优先级 和 Thymeleaf 注释](/notes/Thymeleaf/6.Thymeleaf.md)
@@ -46,24 +51,29 @@
   - [8.Thymeleaf 基本对象表达式](/notes/Thymeleaf/8.Thymeleaf.md)
   - [9.Thymeleaf 工具类对象表达式](/notes/Thymeleaf/9.Thymeleaf.md)
   - [10.Thymeleaf 标记选择器语法](/notes/Thymeleaf/10.Thymeleaf.md)
-### Spring Security
-  - [Spring Security 详细简绍与入门](/notes/Spring%20Security/README.md)
-  - [Spring Security 用户注销 与 Thymeleaf 权限控制](/notes/Spring%20Security/1.用户注销与Thymeleaf-权限控制.md)
+
+### [Spring Security](/notes/Spring%20Security/README.md)
+
 ### 第三方框架
-  - [Maven](https://my.oschina.net/huangyong/blog/194583)
-  - [WebMagic](./notes/WebMagic/README.md)
-  - [alibaba/fastjson](https://github.com/alibaba/fastjson)
+
+- [Maven](https://my.oschina.net/huangyong/blog/194583)
+- [WebMagic](./notes/WebMagic/README.md)
+- [alibaba/fastjson](https://github.com/alibaba/fastjson)
+
 ### 源码分析
+
 - [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
 - [2.commons-pool2](/notes/source/2.commons-pool2.md)
+
 ### 设计模式
+
 - [工厂模式](https://www.runoob.com/design-pattern/factory-pattern.html)
-> 在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。
->
->使用场景： 1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。 2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。 3、设计一个连接服务器的框架，需要三个协议，"POP3"、"IMAP"、"HTTP"，可以把这三个作为产品类，共同实现一个接口。
-> 工厂方法通过传入不同参数创建对象（返回同个父类、协议），调用该对象（父类、协议）的方法实现。目的根据不同参数，创建不同对象。调用同一方法名实现不同效果、功能。
+  > 在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。
+  >
+  > 使用场景： 1、日志记录器：记录可能记录到本地硬盘、系统事件、远程服务器等，用户可以选择记录日志到什么地方。 2、数据库访问，当用户不知道最后系统采用哪一类数据库，以及数据库可能有变化时。 3、设计一个连接服务器的框架，需要三个协议，"POP3"、"IMAP"、"HTTP"，可以把这三个作为产品类，共同实现一个接口。
+  > 工厂方法通过传入不同参数创建对象（返回同个父类、协议），调用该对象（父类、协议）的方法实现。目的根据不同参数，创建不同对象。调用同一方法名实现不同效果、功能。
 - [建造者模式(Builder)](https://www.runoob.com/design-pattern/builder-pattern.html)
-> 建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
->
->一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。
+  > 建造者模式（Builder Pattern）使用多个简单的对象一步一步构建成一个复杂的对象。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
+  >
+  > 一个 Builder 类会一步一步构造最终的对象。该 Builder 类是独立于其他对象的。
 - [更多设计模式](https://www.runoob.com/design-pattern/design-pattern-tutorial.html)
