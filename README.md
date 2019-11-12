@@ -62,6 +62,7 @@
 
 ### 经典好文
 - [IntelliJ IDEA 详细图解最常用的配置 ，适合刚刚用的新人](https://mp.weixin.qq.com/s/v6rOqKzItymQKyFFaIlSWA?spm=a2c4e.10696291.0.0.677f19a4Bh84bR)
+- [Intellij Idea 配置代码格式化/保存时自动格式化](https://blog.csdn.net/agonie201218/article/details/103040885)
 ### 源码分析
 
 - [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
