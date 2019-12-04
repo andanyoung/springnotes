@@ -72,8 +72,8 @@ AnnotationApplicationContext(有@Configuration 注解的类.class)。
 - 属性：
 value:用于指定配置类的字节码
 ```
-@Configurationpublic 
-class SpringConfiguration {
+@Configuration
+public class SpringConfiguration {
 
 }
 ```
