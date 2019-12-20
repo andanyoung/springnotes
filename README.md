@@ -56,6 +56,8 @@
 
 ### [Spring Security](/notes/Spring%20Security/README.md)
 
+### [elasticsearch](https://github.com/AndyYoungCN/springnotes/tree/master/notes/elasticsearch)
+
 ### 第三方框架
 
 - [Maven](https://my.oschina.net/huangyong/blog/194583)
