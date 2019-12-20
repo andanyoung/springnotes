@@ -266,3 +266,7 @@ terms 查询被用于匹配多个精确值
 ### 聚合搜索
 
 ## 其他教程
+
+- 1. [elasticsearch 安装与配置介绍](https://blog.csdn.net/agonie201218/article/details/103596165)
+
+- 2. [ElasticSearch 教程--汇总篇](https://github.com/AndyYoungCN/springnotes/blob/master/notes/elasticsearch/ElasticSearch%E6%95%99%E7%A8%8B--%E6%B1%87%E6%80%BB%E7%AF%87.md)
