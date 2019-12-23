@@ -270,3 +270,4 @@ terms 查询被用于匹配多个精确值
 - 1. [elasticsearch 安装与配置介绍](https://blog.csdn.net/agonie201218/article/details/103596165)
 
 - 2. [ElasticSearch 教程--汇总篇](https://github.com/AndyYoungCN/springnotes/blob/master/notes/elasticsearch/ElasticSearch%E6%95%99%E7%A8%8B--%E6%B1%87%E6%80%BB%E7%AF%87.md)
+- 3. [几十亿数据查询3秒返回，ES性能优化实战](https://mp.weixin.qq.com/s/xTRDXobBN_gcGp-86YMvkQ)
