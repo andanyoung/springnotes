@@ -58,7 +58,7 @@
 
 ### [elasticsearch](https://github.com/AndyYoungCN/springnotes/tree/master/notes/elasticsearch)
 
-### [Redis]()
+### [Redis](https://github.com/AndyYoungCN/springnotes/tree/master/notes/redis)
 
 ### 第三方框架
 
