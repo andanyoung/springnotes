@@ -73,6 +73,8 @@
 - [淘宝为什么能抗住双 11 ？看完这篇文章你就明白了！](https://mp.weixin.qq.com/s/4yB0MwqYcSyPh2KDAOh_Vg)
 - [八点建议助您写出优雅的 Java 代码](https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&mid=2247485140&idx=1&sn=ecaeace613474f1859aaeed0282ae680&chksm=cea2491ff9d5c00982ffaece847ce1aead89fdb3fe190752d9837c075c79fc95db5940992c56&token=1328169465&lang=zh_CN&scene=21#wechat_redirect)
 
+- [更多好文](notes/goodArticle/readme.md)
+
 ### 源码分析
 
 - [1.spring-boot-starter-data-redis](/notes/source/1.spring-boot-starter-data-redis.md)
