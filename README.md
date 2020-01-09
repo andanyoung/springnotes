@@ -41,6 +41,7 @@
   - [MyBatis 开启事务](/notes/MyBatis/MyBatis开启事务.md)
   - [Mybatis 进阶之 Mybatis-PageHelper](/notes/MyBatis/SpringBoot进阶之Mybatis-PageHelper.md)
   - [Mybatis Plus](https://mybatis.plus/guide/)
+  - [Mybatis 如何多数据源动态切换](https://mp.weixin.qq.com/s/OBghGONb-A5sPBIzSbs4Gg)
   - [Mybatis 主从]
 - Thymeleaf
   - [1.Thymeleaf 模板引擎简介与入门](/notes/Thymeleaf/1.Thymeleaf模板引擎简介与入门.md)
