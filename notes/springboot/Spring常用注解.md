@@ -60,7 +60,7 @@ value：用于指定值
 - XML 的优势：修改时，不用改源码。不涉及重新编译和部署。- Spring 管理 Bean 方式的比较：
 
 
-- ![Spring管理Bean方式的比较](../../../image/Spring管理Bean方式的比较.png)
+- ![Spring管理Bean方式的比较](../../image/Spring管理Bean方式的比较.png)
 
 ## spring 管理对象细节
 > 基于注解的 spring IoC 配置中，bean 对象的特点和基于 XML 配置是一模一样的。
