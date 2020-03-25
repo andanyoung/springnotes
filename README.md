@@ -47,7 +47,7 @@
   - [1.Thymeleaf 模板引擎简介与入门](/notes/Thymeleaf/1.Thymeleaf模板引擎简介与入门.md)
   - [2.Thymeleaf 标准表达式语法详解](/notes/Thymeleaf/2.Thymeleaf标准表达式语法详解.md)
   - [3.Thymeleaf th:\* 设置/修改属性值详解](/notes/Thymeleaf/3.th详解.md)
-  - [4.Thymeleaf th:fragment、th:replace、th:insert、th:remove](/notes/Thymeleaf/4.Thymeleaf.md)
+  - [4.Thymeleaf th:each 循环迭代与 th:if、th:switch 条件判断](/notes/Thymeleaf/4.Thymeleaf.md)
   - [5.Thymeleaf th:fragment、th:replace、th:insert、th:remove](/notes/Thymeleaf/5.Thymeleaf.md)
   - [6.Thymeleaf th:with 局部变量 与 属性优先级 和 Thymeleaf 注释](/notes/Thymeleaf/6.Thymeleaf.md)
   - [7.Thymeleaf 内联表达式、文本、JavaScript、CSS](/notes/Thymeleaf/7.Thymeleaf.md)
