@@ -87,7 +87,7 @@ value：用于指定值
 ### 用于改变作用范围的：
 相当于：```<bean id="" class="" scope="">```
 #### @Scope
-- 作用：指定 bean 的作用范围。
+- 作用：指定 bean 的作用范围。more `singleton `(线程不安全)
 - 属性：value：指定范围的值。取值：singleton prototype request session globalsession
 #### 和生命周期相关的：
 相当于：```<bean id="" class="" init-method="" destroy-method="" />```
